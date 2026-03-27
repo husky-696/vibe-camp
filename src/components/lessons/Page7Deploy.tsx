@@ -1,12 +1,13 @@
 import { t, Lang } from "@/data/translations";
-import { Upload, Globe, PartyPopper } from "lucide-react";
+import { Upload, Globe, PartyPopper, Home } from "lucide-react";
 
 interface Props {
   lang: Lang;
   onPrev: () => void;
+  onHome: () => void;
 }
 
-const Page7Deploy = ({ lang, onPrev }: Props) => {
+const Page7Deploy = ({ lang, onPrev, onHome }: Props) => {
   const steps = [
     { icon: Globe, text: t("step1", lang), num: "1" },
     { icon: Upload, text: t("step2", lang), num: "2" },
@@ -40,8 +41,12 @@ const Page7Deploy = ({ lang, onPrev }: Props) => {
         <p className="text-muted-foreground">{t("congratsDesc", lang)}</p>
       </div>
 
-      <div className="flex justify-start pt-4">
+      <div className="flex justify-between pt-4">
         <button onClick={onPrev} className="text-muted-foreground hover:text-foreground transition-colors font-medium">{t("prev", lang)}</button>
+        <button onClick={onHome} className="flex items-center gap-2 bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-semibold shadow-md hover:shadow-lg transition-all hover:scale-105">
+          <Home className="w-4 h-4" />
+          {t("backToHome", lang)}
+        </button>
       </div>
     </div>
   );
