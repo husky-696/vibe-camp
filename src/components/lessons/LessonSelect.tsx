@@ -1,5 +1,5 @@
 import { t, Lang } from "@/data/translations";
-import { User, MessageCircle } from "lucide-react";
+import { BookOpen, User, MessageCircle } from "lucide-react";
 
 interface Props {
   lang: Lang;
@@ -9,18 +9,25 @@ interface Props {
 const LessonSelect = ({ lang, onSelectLesson }: Props) => {
   const lessons = [
     {
+      icon: BookOpen,
+      title: t("lesson0Title", lang),
+      desc: t("lesson0Desc", lang),
+      color: "text-primary",
+      bg: "bg-primary/10",
+    },
+    {
       icon: User,
       title: t("lesson1Title", lang),
       desc: t("lesson1Desc", lang),
-      color: "text-primary",
-      bg: "bg-primary/10",
+      color: "text-accent-foreground",
+      bg: "bg-accent/30",
     },
     {
       icon: MessageCircle,
       title: t("lesson2Title", lang),
       desc: t("lesson2Desc", lang),
-      color: "text-accent-foreground",
-      bg: "bg-accent/30",
+      color: "text-secondary-foreground",
+      bg: "bg-secondary/30",
     },
   ];
 

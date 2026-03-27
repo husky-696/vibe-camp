@@ -14,8 +14,6 @@ const translations: Record<string, Record<Lang, string>> = {
     ko: "바이브 코딩은 AI 도구를 사용하여 더 빠르고 쉽게 코드를 작성하는 것입니다. 원하는 것을 설명하면 AI가 만들어 줍니다!"
   },
   "whatWeUse": { en: "What will we use?", ko: "무엇을 사용할까요?" },
-  "whatWeBuild": { en: "What will we build?", ko: "무엇을 만들까요?" },
-  "profileWebsite": { en: "A personal profile website", ko: "개인 프로필 웹사이트" },
   "goalTitle": { en: "Goal of this lesson", ko: "이 수업의 목표" },
   "goal1": { en: "Learn basic coding", ko: "기본 코딩 배우기" },
   "goal2": { en: "Use AI to build faster", ko: "AI를 활용해 더 빠르게 만들기" },
@@ -25,10 +23,12 @@ const translations: Record<string, Record<Lang, string>> = {
   // Lesson Selection
   "chooseLesson": { en: "Choose Your Lesson", ko: "수업을 선택하세요" },
   "chooseLessonSubtitle": { en: "Pick a project and start building with AI", ko: "프로젝트를 선택하고 AI와 함께 만들어보세요" },
+  "lesson0Title": { en: "Coding Basics", ko: "코딩 기초" },
+  "lesson0Desc": { en: "Learn HTML, CSS fundamentals and set up your tools", ko: "HTML, CSS 기초를 배우고 도구를 설정하세요" },
   "lesson1Title": { en: "Profile Website Project", ko: "프로필 웹사이트 프로젝트" },
-  "lesson1Desc": { en: "Build your own personal profile page using AI", ko: "AI를 사용하여 나만의 프로필 페이지를 만드세요" },
+  "lesson1Desc": { en: "Use AI to vibe-code your personal profile page", ko: "AI를 사용하여 나만의 프로필 페이지를 바이브 코딩하세요" },
   "lesson2Title": { en: "Chat AI Web App", ko: "채팅 AI 웹 앱" },
-  "lesson2Desc": { en: "Build a simple AI chat interface", ko: "간단한 AI 채팅 인터페이스를 만드세요" },
+  "lesson2Desc": { en: "Build a chat interface and learn JavaScript interaction", ko: "채팅 인터페이스를 만들고 JavaScript 인터랙션을 배우세요" },
   "backToHome": { en: "Back to Lessons", ko: "수업 목록으로" },
 
   // Page 2
@@ -56,6 +56,10 @@ const translations: Record<string, Record<Lang, string>> = {
   "textAlign": { en: "text-align → centers or aligns text", ko: "text-align → 텍스트 정렬" },
   "tryTask": { en: "🎨 Try it yourself!", ko: "🎨 직접 해보세요!" },
   "tryTaskDesc": { en: "Try changing the colors in the CSS above. What happens if you use 'lightblue' or '#ff6b6b'?", ko: "위의 CSS에서 색상을 변경해 보세요. 'lightblue'나 '#ff6b6b'를 사용하면 어떻게 될까요?" },
+
+  // Basics Complete
+  "basicsCongrats": { en: "🎉 You've mastered the basics!", ko: "🎉 기초를 마스터했습니다!" },
+  "basicsCongratsDesc": { en: "You now know HTML and CSS fundamentals. Pick a project lesson to start building with AI!", ko: "이제 HTML과 CSS 기초를 알게 되었습니다. 프로젝트 수업을 선택하여 AI와 함께 만들어보세요!" },
 
   // Page 5
   "vibeIntroTitle": { en: "Let's Vibe Code!", ko: "바이브 코딩을 시작하자!" },
@@ -92,7 +96,7 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // Chat Lesson
   "chatTitle": { en: "Chat AI Web App", ko: "채팅 AI 웹 앱" },
-  "chatSubtitle": { en: "Build a simple chat interface with AI", ko: "AI와 함께 간단한 채팅 인터페이스 만들기" },
+  "chatSubtitle": { en: "Build a chat interface and learn JavaScript", ko: "채팅 인터페이스를 만들고 JavaScript를 배우세요" },
   "chatWhatIs": { en: "What is a Chat App?", ko: "채팅 앱이란?" },
   "chatWhatIsDesc": {
     en: "A chat app lets users send and receive messages in real-time. We'll build a simple UI — no backend required!",
@@ -102,18 +106,13 @@ const translations: Record<string, Record<Lang, string>> = {
   "chatGoal1": { en: "Build a chat UI", ko: "채팅 UI 만들기" },
   "chatGoal2": { en: "Style with CSS", ko: "CSS로 스타일링하기" },
   "chatGoal3": { en: "Deploy online", ko: "온라인에 배포하기" },
+  "chatGoalJs": { en: "Learn JavaScript interaction", ko: "JavaScript 인터랙션 배우기" },
 
-  "chatHtmlTitle": { en: "Chat HTML Structure", ko: "채팅 HTML 구조" },
-  "chatHtmlDesc": { en: "Let's build the skeleton of our chat app!", ko: "채팅 앱의 뼈대를 만들어 봅시다!" },
-  "chatHtmlPart1": { en: "The main wrapper for the chat", ko: "채팅의 메인 래퍼" },
-  "chatHtmlPart2": { en: "Where messages are displayed", ko: "메시지가 표시되는 곳" },
-  "chatHtmlPart3": { en: "Text input and send button", ko: "텍스트 입력과 전송 버튼" },
-
-  "chatCssTitle": { en: "Chat Styling", ko: "채팅 스타일링" },
-  "chatCssDesc": { en: "Make the chat look beautiful with CSS!", ko: "CSS로 채팅을 아름답게 만들어 봅시다!" },
-  "chatCssPart1": { en: "Chat bubbles with rounded corners", ko: "둥근 모서리의 채팅 말풍선" },
-  "chatCssPart2": { en: "Sent messages appear on the right", ko: "보낸 메시지는 오른쪽에 표시" },
-  "chatCssPart3": { en: "Received messages appear on the left", ko: "받은 메시지는 왼쪽에 표시" },
+  "chatHtmlDiffTitle": { en: "How is this different?", ko: "무엇이 다를까요?" },
+  "chatHtmlDiffDesc": {
+    en: "Unlike a static profile page, a chat app uses JavaScript to dynamically add messages. The HTML structure includes an input area and a message container that updates in real-time:",
+    ko: "정적인 프로필 페이지와 달리, 채팅 앱은 JavaScript를 사용하여 동적으로 메시지를 추가합니다. HTML 구조에는 입력 영역과 실시간으로 업데이트되는 메시지 컨테이너가 포함됩니다:"
+  },
 
   "chatPromptTitle": { en: "AI Prompt for Chat App", ko: "채팅 앱 AI 프롬프트" },
   "chatPromptDesc": { en: "Use this prompt in your AI IDE to generate the chat app!", ko: "AI IDE에서 이 프롬프트를 사용하여 채팅 앱을 생성하세요!" },

@@ -37,11 +37,6 @@ const Page1Intro = ({ lang, onNext }: Props) => (
     </div>
 
     <div className="lesson-card">
-      <h2 className="text-xl font-semibold mb-3 text-primary">{t("whatWeBuild", lang)}</h2>
-      <p className="text-foreground/80">🌐 {t("profileWebsite", lang)}</p>
-    </div>
-
-    <div className="lesson-card">
       <h2 className="text-xl font-semibold mb-3 text-primary">{t("goalTitle", lang)}</h2>
       <ul className="space-y-2 text-foreground/80">
         <li>📚 {t("goal1", lang)}</li>

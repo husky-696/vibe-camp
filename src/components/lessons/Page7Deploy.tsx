@@ -1,5 +1,6 @@
 import { t, Lang } from "@/data/translations";
 import { Upload, Globe, PartyPopper, Home } from "lucide-react";
+import Confetti from "@/components/Confetti";
 
 interface Props {
   lang: Lang;
@@ -16,6 +17,7 @@ const Page7Deploy = ({ lang, onPrev, onHome }: Props) => {
 
   return (
     <div className="space-y-6">
+      <Confetti />
       <div className="text-center mb-6">
         <h1 className="text-3xl font-bold mb-2">🚀 {t("deployTitle", lang)}</h1>
         <p className="text-muted-foreground">{t("deployDesc", lang)}</p>

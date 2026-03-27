@@ -1,10 +1,19 @@
 import { t, Lang } from "@/data/translations";
-import { MessageCircle, Sparkles, Globe } from "lucide-react";
+import { MessageCircle, Code, Sparkles } from "lucide-react";
+import CodeBlock from "@/components/CodeBlock";
 
 interface Props {
   lang: Lang;
   onNext: () => void;
 }
+
+const chatHtmlSnippet = `<div class="messages" id="messages">
+  <!-- Messages appear here dynamically -->
+</div>
+<div class="input-area">
+  <input type="text" id="msgInput" placeholder="Type...">
+  <button id="sendBtn">Send</button>
+</div>`;
 
 const ChatPage1Intro = ({ lang, onNext }: Props) => (
   <div className="space-y-6">
@@ -26,7 +35,7 @@ const ChatPage1Intro = ({ lang, onNext }: Props) => (
         {[
           { icon: MessageCircle, label: lang === "en" ? "Chat UI" : "채팅 UI", color: "text-primary" },
           { icon: Sparkles, label: lang === "en" ? "Styling" : "스타일링", color: "text-secondary-foreground" },
-          { icon: Globe, label: lang === "en" ? "Deploy" : "배포", color: "text-accent-foreground" },
+          { icon: Code, label: "JavaScript", color: "text-accent-foreground" },
         ].map(({ icon: Icon, label, color }) => (
           <div key={label} className="flex flex-col items-center gap-2 p-3 rounded-xl bg-muted/50">
             <Icon className={`w-8 h-8 ${color}`} />
@@ -37,10 +46,16 @@ const ChatPage1Intro = ({ lang, onNext }: Props) => (
     </div>
 
     <div className="lesson-card">
+      <h2 className="text-xl font-semibold mb-3 text-primary">{t("chatHtmlDiffTitle", lang)}</h2>
+      <p className="text-foreground/80 mb-3">{t("chatHtmlDiffDesc", lang)}</p>
+      <CodeBlock code={chatHtmlSnippet} language="html" />
+    </div>
+
+    <div className="lesson-card">
       <h2 className="text-xl font-semibold mb-3 text-primary">{t("goalTitle", lang)}</h2>
       <ul className="space-y-2 text-foreground/80">
         <li>💬 {t("chatGoal1", lang)}</li>
-        <li>🎨 {t("chatGoal2", lang)}</li>
+        <li>⚡ {t("chatGoalJs", lang)}</li>
         <li>🚀 {t("chatGoal3", lang)}</li>
       </ul>
     </div>
