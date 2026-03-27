@@ -47,6 +47,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        code: "hsl(var(--code-bg))",
+        tip: {
+          DEFAULT: "hsl(var(--tip))",
+          foreground: "hsl(var(--tip-foreground))",
+        },
+        progress: "hsl(var(--progress))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
