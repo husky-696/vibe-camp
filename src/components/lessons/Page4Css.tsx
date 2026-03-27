@@ -1,4 +1,5 @@
 import { t, Lang } from "@/data/translations";
+import CodeBlock from "@/components/CodeBlock";
 
 interface Props {
   lang: Lang;
@@ -25,9 +26,7 @@ const Page4Css = ({ lang, onNext, onPrev }: Props) => (
     </div>
 
     <div className="lesson-card">
-      <div className="code-block">
-        <pre className="text-foreground/90">{cssCode}</pre>
-      </div>
+      <CodeBlock code={cssCode} language="css" />
     </div>
 
     <div className="lesson-card">

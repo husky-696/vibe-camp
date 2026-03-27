@@ -7,7 +7,7 @@ interface Props {
   onHome: () => void;
 }
 
-const Page7Deploy = ({ lang, onPrev, onHome }: Props) => {
+const ChatPage7Deploy = ({ lang, onPrev, onHome }: Props) => {
   const steps = [
     { icon: Globe, text: t("step1", lang), num: "1" },
     { icon: Upload, text: t("step2", lang), num: "2" },
@@ -37,8 +37,8 @@ const Page7Deploy = ({ lang, onPrev, onHome }: Props) => {
 
       <div className="lesson-card text-center py-8 bg-primary/5">
         <PartyPopper className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h2 className="text-2xl font-bold mb-2">{t("congrats", lang)}</h2>
-        <p className="text-muted-foreground">{t("congratsDesc", lang)}</p>
+        <h2 className="text-2xl font-bold mb-2">{t("chatCongrats", lang)}</h2>
+        <p className="text-muted-foreground">{t("chatCongratsDesc", lang)}</p>
       </div>
 
       <div className="flex justify-between pt-4">
@@ -52,4 +52,4 @@ const Page7Deploy = ({ lang, onPrev, onHome }: Props) => {
   );
 };
 
-export default Page7Deploy;
+export default ChatPage7Deploy;
