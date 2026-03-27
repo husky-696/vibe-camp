@@ -22,6 +22,15 @@ const translations: Record<string, Record<Lang, string>> = {
   "goal3": { en: "Publish a real website", ko: "실제 웹사이트 배포하기" },
   "startLesson": { en: "Start Lesson →", ko: "수업 시작 →" },
 
+  // Lesson Selection
+  "chooseLesson": { en: "Choose Your Lesson", ko: "수업을 선택하세요" },
+  "chooseLessonSubtitle": { en: "Pick a project and start building with AI", ko: "프로젝트를 선택하고 AI와 함께 만들어보세요" },
+  "lesson1Title": { en: "Profile Website Project", ko: "프로필 웹사이트 프로젝트" },
+  "lesson1Desc": { en: "Build your own personal profile page using AI", ko: "AI를 사용하여 나만의 프로필 페이지를 만드세요" },
+  "lesson2Title": { en: "Chat AI Web App", ko: "채팅 AI 웹 앱" },
+  "lesson2Desc": { en: "Build a simple AI chat interface", ko: "간단한 AI 채팅 인터페이스를 만드세요" },
+  "backToHome": { en: "Back to Lessons", ko: "수업 목록으로" },
+
   // Page 2
   "setupTitle": { en: "Setup Checklist", ko: "준비 체크리스트" },
   "setupDesc": { en: "Make sure you have everything ready before we begin!", ko: "시작하기 전에 모든 것이 준비되었는지 확인하세요!" },
@@ -80,6 +89,58 @@ const translations: Record<string, Record<Lang, string>> = {
   "step3": { en: "Get your live website link!", ko: "라이브 웹사이트 링크를 받으세요!" },
   "congrats": { en: "🎉 You now have a real website!", ko: "🎉 이제 실제 웹사이트가 생겼습니다!" },
   "congratsDesc": { en: "Share it with your friends and family. You're a web developer now!", ko: "친구들과 가족에게 공유하세요. 이제 여러분은 웹 개발자입니다!" },
+
+  // Chat Lesson
+  "chatTitle": { en: "Chat AI Web App", ko: "채팅 AI 웹 앱" },
+  "chatSubtitle": { en: "Build a simple chat interface with AI", ko: "AI와 함께 간단한 채팅 인터페이스 만들기" },
+  "chatWhatIs": { en: "What is a Chat App?", ko: "채팅 앱이란?" },
+  "chatWhatIsDesc": {
+    en: "A chat app lets users send and receive messages in real-time. We'll build a simple UI — no backend required!",
+    ko: "채팅 앱은 사용자가 실시간으로 메시지를 주고받을 수 있게 합니다. 간단한 UI를 만들어 볼게요 — 백엔드는 필요 없습니다!"
+  },
+  "chatWhatBuild": { en: "What will we build?", ko: "무엇을 만들까요?" },
+  "chatGoal1": { en: "Build a chat UI", ko: "채팅 UI 만들기" },
+  "chatGoal2": { en: "Style with CSS", ko: "CSS로 스타일링하기" },
+  "chatGoal3": { en: "Deploy online", ko: "온라인에 배포하기" },
+
+  "chatHtmlTitle": { en: "Chat HTML Structure", ko: "채팅 HTML 구조" },
+  "chatHtmlDesc": { en: "Let's build the skeleton of our chat app!", ko: "채팅 앱의 뼈대를 만들어 봅시다!" },
+  "chatHtmlPart1": { en: "The main wrapper for the chat", ko: "채팅의 메인 래퍼" },
+  "chatHtmlPart2": { en: "Where messages are displayed", ko: "메시지가 표시되는 곳" },
+  "chatHtmlPart3": { en: "Text input and send button", ko: "텍스트 입력과 전송 버튼" },
+
+  "chatCssTitle": { en: "Chat Styling", ko: "채팅 스타일링" },
+  "chatCssDesc": { en: "Make the chat look beautiful with CSS!", ko: "CSS로 채팅을 아름답게 만들어 봅시다!" },
+  "chatCssPart1": { en: "Chat bubbles with rounded corners", ko: "둥근 모서리의 채팅 말풍선" },
+  "chatCssPart2": { en: "Sent messages appear on the right", ko: "보낸 메시지는 오른쪽에 표시" },
+  "chatCssPart3": { en: "Received messages appear on the left", ko: "받은 메시지는 왼쪽에 표시" },
+
+  "chatPromptTitle": { en: "AI Prompt for Chat App", ko: "채팅 앱 AI 프롬프트" },
+  "chatPromptDesc": { en: "Use this prompt in your AI IDE to generate the chat app!", ko: "AI IDE에서 이 프롬프트를 사용하여 채팅 앱을 생성하세요!" },
+  "chatPromptText": {
+    en: "Create a simple chat UI using HTML, CSS, and JavaScript. Include: a message display area, input field, send button, and basic styling with chat bubbles.",
+    ko: "HTML, CSS, JavaScript를 사용하여 간단한 채팅 UI를 만들어주세요. 메시지 표시 영역, 입력 필드, 전송 버튼, 채팅 말풍선 스타일링을 포함해주세요."
+  },
+
+  "chatJsTitle": { en: "Add Interaction", ko: "인터랙션 추가" },
+  "chatJsDesc": { en: "Make the chat respond when you send a message!", ko: "메시지를 보내면 채팅이 반응하게 만들어 봅시다!" },
+  "chatJsPart1": { en: "Get user input from the text field", ko: "텍스트 필드에서 사용자 입력 가져오기" },
+  "chatJsPart2": { en: "Create a new message element and display it", ko: "새 메시지 요소를 만들어 표시하기" },
+  "chatJsPart3": { en: "Send with Enter key or click", ko: "Enter 키 또는 클릭으로 전송" },
+
+  "chatUpgradeTitle": { en: "Upgrade Ideas", ko: "업그레이드 아이디어" },
+  "chatUpgradeDesc": { en: "Take your chat app to the next level!", ko: "채팅 앱을 다음 단계로 발전시켜 보세요!" },
+  "chatUpgrade1": { en: "Connect AI API", ko: "AI API 연결" },
+  "chatUpgrade1Desc": { en: "Add OpenAI or another AI to auto-reply to messages", ko: "OpenAI 또는 다른 AI를 연결하여 자동 답장 기능 추가" },
+  "chatUpgrade2": { en: "Typing Effect", ko: "타이핑 효과" },
+  "chatUpgrade2Desc": { en: "Show a typing animation when AI is responding", ko: "AI가 응답할 때 타이핑 애니메이션 표시" },
+  "chatUpgrade3": { en: "Custom Theme", ko: "커스텀 테마" },
+  "chatUpgrade3Desc": { en: "Let users switch between dark and light mode", ko: "사용자가 다크/라이트 모드를 전환할 수 있게 하기" },
+  "chatUpgradeTip": { en: "💡 Start simple, then improve!", ko: "💡 간단하게 시작한 후 개선하세요!" },
+  "chatUpgradeTipDesc": { en: "Get the basic version working first, then add features one at a time.", ko: "먼저 기본 버전을 완성한 후, 기능을 하나씩 추가하세요." },
+
+  "chatCongrats": { en: "🎉 Your chat app is live!", ko: "🎉 채팅 앱이 완성되었습니다!" },
+  "chatCongratsDesc": { en: "Share it with friends and keep improving. You built a real web app!", ko: "친구들에게 공유하고 계속 개선하세요. 진짜 웹 앱을 만들었습니다!" },
 
   // Common
   "next": { en: "Next →", ko: "다음 →" },
