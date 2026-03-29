@@ -195,6 +195,21 @@ const translations: Record<string, Record<Lang, string>> = {
   "tttCongrats": { en: "🎉 Your Tic Tac Toe game is live!", ko: "🎉 틱택토 게임이 완성되었습니다!" },
   "tttCongratsDesc": { en: "Challenge your friends and keep adding features. You built a real game!", ko: "친구들에게 도전하고 기능을 계속 추가하세요. 진짜 게임을 만들었습니다!" },
 
+  // Hint buttons
+  "hintBtnLabel": { en: "💡 Show example prompt", ko: "💡 예시 프롬프트 보기" },
+  "profileHintPrompt": {
+    en: "Change the background color to light blue, update the name to 'Jane Doe', add a profile picture placeholder as a circle, and change the hobbies to: drawing, gaming, cooking.",
+    ko: "배경색을 연한 파란색으로 변경하고, 이름을 '홍길동'으로 바꾸고, 프로필 사진 자리를 원형으로 추가하고, 취미를 그림 그리기, 게임, 요리로 변경해주세요."
+  },
+  "chatHintPrompt": {
+    en: "Add a typing indicator that shows '...' when waiting for a reply. Change the chat bubble colors to green for sent messages and white for received. Add a header with the app name 'My Chat'.",
+    ko: "답장을 기다릴 때 '...' 타이핑 표시를 추가하세요. 보낸 메시지는 초록색, 받은 메시지는 흰색으로 말풍선 색상을 변경하세요. 앱 이름 '나의 채팅'이 있는 헤더를 추가하세요."
+  },
+  "tttHintPrompt": {
+    en: "Change X and O to 🔥 and 💧 emojis. Add a glow effect when someone wins. Add player name inputs above the board. Change the board color to dark purple with white grid lines.",
+    ko: "X와 O를 🔥와 💧 이모지로 변경하세요. 누가 이기면 빛나는 효과를 추가하세요. 보드 위에 플레이어 이름 입력을 추가하세요. 보드 색상을 흰색 격자선이 있는 진한 보라색으로 변경하세요."
+  },
+
   // Common
   "next": { en: "Next →", ko: "다음 →" },
   "prev": { en: "← Back", ko: "← 이전" },

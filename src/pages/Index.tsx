@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Lang } from "@/data/translations";
 import LanguageToggle from "@/components/LanguageToggle";
@@ -34,6 +34,17 @@ const Index = () => {
   const [page, setPage] = useState(1);
   const [lang, setLang] = useState<Lang>("en");
   const [direction, setDirection] = useState(1);
+  const [dark, setDark] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") === "dark";
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+    localStorage.setItem("theme", dark ? "dark" : "light");
+  }, [dark]);
 
   const totalPages = lesson ? LESSON_PAGES[lesson] : 1;
 
@@ -121,7 +132,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen py-8 px-4">
-      <LanguageToggle lang={lang} onToggle={() => setLang(l => l === "en" ? "ko" : "en")} />
+      <LanguageToggle
+        lang={lang}
+        onToggle={() => setLang(l => l === "en" ? "ko" : "en")}
+        dark={dark}
+        onToggleDark={() => setDark(d => !d)}
+      />
 
       <div className="max-w-2xl mx-auto pt-12">
         {lesson !== null && page > 1 && <ProgressBar current={page} total={totalPages} lang={lang} />}

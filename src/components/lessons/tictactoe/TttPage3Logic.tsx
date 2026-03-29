@@ -7,25 +7,37 @@ interface Props {
   onPrev: () => void;
 }
 
-const jsCode = `let board = ['', '', '', '', '', '', '', '', ''];
+const jsCode = `// === Tic Tac Toe Game Logic ===
+
+// The board: 9 empty cells (like a 3x3 grid stored as a list)
+let board = ['', '', '', '', '', '', '', '', ''];
+
+// Who's playing right now? X always goes first
 let currentPlayer = 'X';
+
+// Keep track of how many games each player has won
 let scores = { X: 0, O: 0 };
 
+// All the ways you can win (3 in a row)
 const winCombos = [
-  [0,1,2], [3,4,5], [6,7,8], // rows
-  [0,3,6], [1,4,7], [2,5,8], // columns
-  [0,4,8], [2,4,6]           // diagonals
+  [0,1,2], [3,4,5], [6,7,8], // Rows: top, middle, bottom
+  [0,3,6], [1,4,7], [2,5,8], // Columns: left, center, right
+  [0,4,8], [2,4,6]           // Diagonals: corner to corner
 ];
 
+// Check if someone has won
 function checkWin() {
   for (let combo of winCombos) {
-    const [a, b, c] = combo;
+    const [a, b, c] = combo;  // Get the 3 positions to check
+    // If all 3 cells match and aren't empty → we have a winner!
     if (board[a] && board[a] === board[b] 
         && board[a] === board[c]) {
-      return { winner: board[a], combo };
+      return { winner: board[a], combo }; // Return who won and which line
     }
   }
+  // If every cell is filled but no winner → it's a draw
   if (board.every(cell => cell)) return { winner: 'draw' };
+  // Otherwise, game continues
   return null;
 }`;
 

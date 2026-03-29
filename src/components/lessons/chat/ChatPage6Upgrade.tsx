@@ -1,5 +1,6 @@
 import { t, Lang } from "@/data/translations";
 import { Cpu, Sparkles, Palette } from "lucide-react";
+import HintButton from "@/components/HintButton";
 
 interface Props {
   lang: Lang;
@@ -34,6 +35,12 @@ const ChatPage6Upgrade = ({ lang, onNext, onPrev }: Props) => {
           </div>
         ))}
       </div>
+
+      <HintButton
+        lang={lang}
+        label={t("hintBtnLabel", lang)}
+        prompt={t("chatHintPrompt", lang)}
+      />
 
       <div className="tip-box">
         <h3 className="font-semibold mb-2">{t("chatUpgradeTip", lang)}</h3>
