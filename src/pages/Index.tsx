@@ -4,7 +4,7 @@ import { Lang } from "@/data/translations";
 import LanguageToggle from "@/components/LanguageToggle";
 import ProgressBar from "@/components/ProgressBar";
 import LessonSelect from "@/components/lessons/LessonSelect";
-// Lesson 1: Basics
+// Lesson 1: Introduction
 import Page1Intro from "@/components/lessons/Page1Intro";
 import Page2Setup from "@/components/lessons/Page2Setup";
 import Page3Html from "@/components/lessons/Page3Html";
@@ -20,8 +20,14 @@ import ChatPage4Prompt from "@/components/lessons/chat/ChatPage4Prompt";
 import ChatPage5Interaction from "@/components/lessons/chat/ChatPage5Interaction";
 import ChatPage6Upgrade from "@/components/lessons/chat/ChatPage6Upgrade";
 import ChatPage7Deploy from "@/components/lessons/chat/ChatPage7Deploy";
+// Lesson 4: Tic Tac Toe
+import TttPage1Intro from "@/components/lessons/tictactoe/TttPage1Intro";
+import TttPage2Prompt from "@/components/lessons/tictactoe/TttPage2Prompt";
+import TttPage3Logic from "@/components/lessons/tictactoe/TttPage3Logic";
+import TttPage4Personalize from "@/components/lessons/tictactoe/TttPage4Personalize";
+import TttPage5Deploy from "@/components/lessons/tictactoe/TttPage5Deploy";
 
-const LESSON_PAGES: Record<number, number> = { 1: 5, 2: 3, 3: 5 };
+const LESSON_PAGES: Record<number, number> = { 1: 5, 2: 3, 3: 5, 4: 5 };
 
 const Index = () => {
   const [lesson, setLesson] = useState<number | null>(null);
@@ -60,7 +66,6 @@ const Index = () => {
     exit: (d: number) => ({ x: d > 0 ? -80 : 80, opacity: 0 }),
   };
 
-  // Lesson 1: Basics (Intro → Setup → HTML → CSS → Complete)
   const renderLesson1 = () => {
     switch (page) {
       case 1: return <Page1Intro lang={lang} onNext={next} />;
@@ -72,7 +77,6 @@ const Index = () => {
     }
   };
 
-  // Lesson 2: Profile Website (Vibe Coding → Build → Deploy)
   const renderLesson2 = () => {
     switch (page) {
       case 1: return <Page5VibeCoding lang={lang} onNext={next} onPrev={prev} />;
@@ -82,7 +86,6 @@ const Index = () => {
     }
   };
 
-  // Lesson 3: Chat App (Intro → Prompt → JS → Upgrade → Deploy)
   const renderLesson3 = () => {
     switch (page) {
       case 1: return <ChatPage1Intro lang={lang} onNext={next} />;
@@ -94,11 +97,23 @@ const Index = () => {
     }
   };
 
+  const renderLesson4 = () => {
+    switch (page) {
+      case 1: return <TttPage1Intro lang={lang} onNext={next} />;
+      case 2: return <TttPage2Prompt lang={lang} onNext={next} onPrev={prev} />;
+      case 3: return <TttPage3Logic lang={lang} onNext={next} onPrev={prev} />;
+      case 4: return <TttPage4Personalize lang={lang} onNext={next} onPrev={prev} />;
+      case 5: return <TttPage5Deploy lang={lang} onPrev={prev} onHome={goHome} />;
+      default: return null;
+    }
+  };
+
   const renderContent = () => {
     if (lesson === null) return <LessonSelect lang={lang} onSelectLesson={selectLesson} />;
     if (lesson === 1) return renderLesson1();
     if (lesson === 2) return renderLesson2();
     if (lesson === 3) return renderLesson3();
+    if (lesson === 4) return renderLesson4();
     return null;
   };
 

@@ -1,4 +1,5 @@
 import { t, Lang } from "@/data/translations";
+import CodeBlock from "@/components/CodeBlock";
 
 interface Props {
   lang: Lang;
@@ -15,20 +16,19 @@ const Page5VibeCoding = ({ lang, onNext, onPrev }: Props) => (
 
     <div className="lesson-card">
       <h2 className="text-lg font-semibold mb-3 text-primary">{t("promptLabel", lang)}</h2>
-      <div className="bg-muted/70 rounded-xl p-4 border-l-4 border-primary italic text-foreground/80 leading-relaxed">
-        "{t("promptText", lang)}"
-      </div>
+      <CodeBlock code={t("promptText", lang)} language="prompt" />
     </div>
 
     <div className="lesson-card">
       <h2 className="text-lg font-semibold mb-3 text-primary">
-        {lang === "en" ? "Important Rules" : "중요한 규칙"}
+        {lang === "en" ? "Steps" : "단계"}
       </h2>
-      <ul className="space-y-3 text-foreground/80">
-        <li className="text-base">{t("vibeRule1", lang)}</li>
-        <li className="text-base">{t("vibeRule2", lang)}</li>
-        <li className="text-base">{t("vibeRule3", lang)}</li>
-      </ul>
+      <ol className="space-y-3 text-foreground/80">
+        <li className="text-base">1️⃣ {t("vibeStep1", lang)}</li>
+        <li className="text-base">2️⃣ {t("vibeStep2", lang)}</li>
+        <li className="text-base">3️⃣ {t("vibeStep3", lang)}</li>
+        <li className="text-base">4️⃣ {t("vibeStep4", lang)}</li>
+      </ol>
     </div>
 
     <div className="flex justify-between pt-4">
