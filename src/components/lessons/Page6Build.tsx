@@ -1,5 +1,6 @@
 import { t, Lang } from "@/data/translations";
 import { User, FileText, Heart, Link, Pencil } from "lucide-react";
+import HintButton from "@/components/HintButton";
 
 interface Props {
   lang: Lang;
@@ -43,6 +44,12 @@ const Page6Build = ({ lang, onNext, onPrev }: Props) => {
           <li>4️⃣ {t("personalizeStep4", lang)}</li>
         </ul>
       </div>
+
+      <HintButton
+        lang={lang}
+        label={t("hintBtnLabel", lang)}
+        prompt={t("profileHintPrompt", lang)}
+      />
 
       <div className="tip-box">
         <h3 className="font-semibold mb-3">{t("tipsTitle", lang)}</h3>

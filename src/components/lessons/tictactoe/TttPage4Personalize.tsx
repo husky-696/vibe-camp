@@ -1,5 +1,6 @@
 import { t, Lang } from "@/data/translations";
 import { Palette, User, Gamepad2, Volume2 } from "lucide-react";
+import HintButton from "@/components/HintButton";
 
 interface Props {
   lang: Lang;
@@ -32,6 +33,12 @@ const TttPage4Personalize = ({ lang, onNext, onPrev }: Props) => {
           </div>
         ))}
       </div>
+
+      <HintButton
+        lang={lang}
+        label={t("hintBtnLabel", lang)}
+        prompt={t("tttHintPrompt", lang)}
+      />
 
       <div className="tip-box">
         <h3 className="font-semibold mb-2">{t("chatUpgradeTip", lang)}</h3>

@@ -7,25 +7,30 @@ interface Props {
   onPrev: () => void;
 }
 
-const jsCode = `const input = document.getElementById('msgInput');
-const sendBtn = document.getElementById('sendBtn');
-const messages = document.getElementById('messages');
+const jsCode = `// Step 1: Find the HTML elements we need
+const input = document.getElementById('msgInput');   // The text input field
+const sendBtn = document.getElementById('sendBtn');  // The send button
+const messages = document.getElementById('messages'); // The message container
 
+// Step 2: Create a function that sends a message
 function sendMessage() {
-  const text = input.value.trim();
-  if (!text) return;
+  const text = input.value.trim();  // Get the typed text (remove extra spaces)
+  if (!text) return;                // If empty, do nothing
 
-  const msg = document.createElement('div');
-  msg.className = 'message sent';
-  msg.textContent = text;
-  messages.appendChild(msg);
+  // Step 3: Create a new message bubble
+  const msg = document.createElement('div');  // Make a new <div> element
+  msg.className = 'message sent';             // Style it as a "sent" message
+  msg.textContent = text;                     // Put the text inside it
+  messages.appendChild(msg);                  // Add it to the message area
 
-  input.value = '';
-  messages.scrollTop = messages.scrollHeight;
+  // Step 4: Clean up
+  input.value = '';                           // Clear the input field
+  messages.scrollTop = messages.scrollHeight; // Scroll to the newest message
 }
 
-sendBtn.addEventListener('click', sendMessage);
-input.addEventListener('keypress', (e) => {
+// Step 5: Listen for user actions
+sendBtn.addEventListener('click', sendMessage);    // Click the send button
+input.addEventListener('keypress', (e) => {        // Or press Enter
   if (e.key === 'Enter') sendMessage();
 });`;
 
