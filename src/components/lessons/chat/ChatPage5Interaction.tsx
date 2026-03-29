@@ -49,6 +49,17 @@ const ChatPage5Interaction = ({ lang, onNext, onPrev }: Props) => (
       </ul>
     </div>
 
+    <div className="lesson-card">
+      <h3 className="font-semibold mb-3 text-primary">✏️ {t("chatPersonalizeTitle", lang)}</h3>
+      <p className="text-sm text-muted-foreground mb-3">{t("chatPersonalizeDesc", lang)}</p>
+      <ul className="space-y-2 text-foreground/80 text-sm">
+        <li>🎨 {t("chatPersonalize1", lang)}</li>
+        <li>📝 {t("chatPersonalize2", lang)}</li>
+        <li>✨ {t("chatPersonalize3", lang)}</li>
+        <li>🤖 {t("chatPersonalize4", lang)}</li>
+      </ul>
+    </div>
+
     <div className="flex justify-between pt-4">
       <button onClick={onPrev} className="text-muted-foreground hover:text-foreground transition-colors font-medium">{t("prev", lang)}</button>
       <button onClick={onNext} className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-semibold shadow-md hover:shadow-lg transition-all hover:scale-105">

@@ -1,5 +1,5 @@
 import { t, Lang } from "@/data/translations";
-import { User, FileText, Heart, Link } from "lucide-react";
+import { User, FileText, Heart, Link, Pencil } from "lucide-react";
 
 interface Props {
   lang: Lang;
@@ -9,26 +9,39 @@ interface Props {
 
 const Page6Build = ({ lang, onNext, onPrev }: Props) => {
   const sections = [
-    { icon: User, label: t("name", lang), color: "text-blue-500" },
-    { icon: FileText, label: t("bio", lang), color: "text-green-500" },
-    { icon: Heart, label: t("hobbies", lang), color: "text-pink-500" },
-    { icon: Link, label: t("socialLinks", lang), color: "text-orange-500" },
+    { icon: User, label: t("name", lang) },
+    { icon: FileText, label: t("bio", lang) },
+    { icon: Heart, label: t("hobbies", lang) },
+    { icon: Link, label: t("socialLinks", lang) },
   ];
 
   return (
     <div className="space-y-6">
       <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold mb-2">🛠️ {t("buildTitle", lang)}</h1>
+        <h1 className="text-3xl font-bold mb-2">✏️ {t("buildTitle", lang)}</h1>
         <p className="text-muted-foreground">{t("buildDesc", lang)}</p>
       </div>
 
       <div className="grid grid-cols-2 gap-4">
-        {sections.map(({ icon: Icon, label, color }) => (
+        {sections.map(({ icon: Icon, label }) => (
           <div key={label} className="lesson-card flex flex-col items-center gap-3 py-6">
-            <Icon className={`w-10 h-10 ${color}`} />
+            <Icon className="w-10 h-10 text-primary" />
             <span className="font-semibold">{label}</span>
           </div>
         ))}
+      </div>
+
+      <div className="lesson-card">
+        <h3 className="font-semibold mb-3 text-primary flex items-center gap-2">
+          <Pencil className="w-4 h-4" />
+          {t("personalizeHow", lang)}
+        </h3>
+        <ul className="space-y-2 text-foreground/80 text-sm">
+          <li>1️⃣ {t("personalizeStep1", lang)}</li>
+          <li>2️⃣ {t("personalizeStep2", lang)}</li>
+          <li>3️⃣ {t("personalizeStep3", lang)}</li>
+          <li>4️⃣ {t("personalizeStep4", lang)}</li>
+        </ul>
       </div>
 
       <div className="tip-box">

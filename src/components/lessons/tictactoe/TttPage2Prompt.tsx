@@ -7,16 +7,16 @@ interface Props {
   onPrev: () => void;
 }
 
-const ChatPage4Prompt = ({ lang, onNext, onPrev }: Props) => (
+const TttPage2Prompt = ({ lang, onNext, onPrev }: Props) => (
   <div className="space-y-6">
     <div className="text-center mb-6">
-      <h1 className="text-3xl font-bold mb-2">🤖 {t("chatPromptTitle", lang)}</h1>
-      <p className="text-muted-foreground">{t("chatPromptDesc", lang)}</p>
+      <h1 className="text-3xl font-bold mb-2">🤖 {t("tttPromptTitle", lang)}</h1>
+      <p className="text-muted-foreground">{t("tttPromptDesc", lang)}</p>
     </div>
 
     <div className="lesson-card">
       <h2 className="text-lg font-semibold mb-3 text-primary">{t("promptLabel", lang)}</h2>
-      <CodeBlock code={t("chatPromptText", lang)} language="prompt" />
+      <CodeBlock code={t("tttPromptText", lang)} language="prompt" />
     </div>
 
     <div className="lesson-card">
@@ -40,4 +40,4 @@ const ChatPage4Prompt = ({ lang, onNext, onPrev }: Props) => (
   </div>
 );
 
-export default ChatPage4Prompt;
+export default TttPage2Prompt;
