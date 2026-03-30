@@ -129,8 +129,8 @@ const translations: Record<string, Record<Lang, string>> = {
     ko: "HTML, CSS, JavaScript를 사용하여 간단한 채팅 UI를 만들어주세요. 메시지 표시 영역, 입력 필드, 전송 버튼, 채팅 말풍선 스타일링을 포함해주세요. 전송 버튼 클릭이나 Enter 키를 누르면 메시지가 나타나야 합니다."
   },
 
-  "chatJsTitle": { en: "Understanding the JavaScript", ko: "JavaScript 이해하기" },
-  "chatJsDesc": { en: "Here's how the chat interaction works behind the scenes!", ko: "채팅 인터랙션이 어떻게 작동하는지 알아봅시다!" },
+  "chatJsTitle": { en: "How Your Chat Works", ko: "채팅이 어떻게 작동하나요" },
+  "chatJsDesc": { en: "A quick look at what AI built for you — no need to memorize this!", ko: "AI가 만들어준 것을 간단히 살펴봅시다 — 외울 필요 없어요!" },
   "chatJsPart1": { en: "Get user input from the text field", ko: "텍스트 필드에서 사용자 입력 가져오기" },
   "chatJsPart2": { en: "Create a new message element and display it", ko: "새 메시지 요소를 만들어 표시하기" },
   "chatJsPart3": { en: "Send with Enter key or click", ko: "Enter 키 또는 클릭으로 전송" },
@@ -178,8 +178,8 @@ const translations: Record<string, Record<Lang, string>> = {
     ko: "HTML, CSS, JavaScript를 사용하여 틱택토 게임을 만들어주세요. 포함할 기능: 3x3 격자 보드, 1대1 턴제 게임플레이(Player X vs Player O), 양쪽 플레이어 점수 추적, 일시정지/재개 버튼, 승리 시 줄 하이라이트 애니메이션, 패배 및 무승부 표시, 리셋/새 게임 버튼, 마크 배치와 게임 결과에 대한 간단한 애니메이션. 깔끔하고 현대적인 디자인과 부드러운 전환을 사용해주세요."
   },
 
-  "tttJsTitle": { en: "Understanding the Game Logic", ko: "게임 로직 이해하기" },
-  "tttJsDesc": { en: "Here's how the game works behind the scenes!", ko: "게임이 어떻게 작동하는지 알아봅시다!" },
+  "tttJsTitle": { en: "How Your Game Works", ko: "게임이 어떻게 작동하나요" },
+  "tttJsDesc": { en: "A quick look at what AI built for you — no need to memorize this!", ko: "AI가 만들어준 것을 간단히 살펴봅시다 — 외울 필요 없어요!" },
   "tttJsPart1": { en: "Track board state in an array (9 cells)", ko: "배열로 보드 상태 추적 (9칸)" },
   "tttJsPart2": { en: "Switch turns between X and O", ko: "X와 O 사이의 턴 전환" },
   "tttJsPart3": { en: "Check win conditions (rows, columns, diagonals)", ko: "승리 조건 확인 (행, 열, 대각선)" },
