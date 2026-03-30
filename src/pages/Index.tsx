@@ -14,18 +14,18 @@ import BasicsComplete from "@/components/lessons/BasicsComplete";
 import Page5VibeCoding from "@/components/lessons/Page5VibeCoding";
 import Page6Build from "@/components/lessons/Page6Build";
 import Page7Deploy from "@/components/lessons/Page7Deploy";
-// Lesson 3: Chat App
-import ChatPage1Intro from "@/components/lessons/chat/ChatPage1Intro";
-import ChatPage4Prompt from "@/components/lessons/chat/ChatPage4Prompt";
-import ChatPage5Interaction from "@/components/lessons/chat/ChatPage5Interaction";
-import ChatPage6Upgrade from "@/components/lessons/chat/ChatPage6Upgrade";
-import ChatPage7Deploy from "@/components/lessons/chat/ChatPage7Deploy";
-// Lesson 4: Tic Tac Toe
+// Lesson 3: Tic Tac Toe
 import TttPage1Intro from "@/components/lessons/tictactoe/TttPage1Intro";
 import TttPage2Prompt from "@/components/lessons/tictactoe/TttPage2Prompt";
 import TttPage3Logic from "@/components/lessons/tictactoe/TttPage3Logic";
 import TttPage4Personalize from "@/components/lessons/tictactoe/TttPage4Personalize";
 import TttPage5Deploy from "@/components/lessons/tictactoe/TttPage5Deploy";
+// Lesson 4: Chat App
+import ChatPage1Intro from "@/components/lessons/chat/ChatPage1Intro";
+import ChatPage4Prompt from "@/components/lessons/chat/ChatPage4Prompt";
+import ChatPage5Interaction from "@/components/lessons/chat/ChatPage5Interaction";
+import ChatPage6Upgrade from "@/components/lessons/chat/ChatPage6Upgrade";
+import ChatPage7Deploy from "@/components/lessons/chat/ChatPage7Deploy";
 
 const LESSON_PAGES: Record<number, number> = { 1: 5, 2: 3, 3: 5, 4: 5 };
 
@@ -99,22 +99,22 @@ const Index = () => {
 
   const renderLesson3 = () => {
     switch (page) {
-      case 1: return <ChatPage1Intro lang={lang} onNext={next} />;
-      case 2: return <ChatPage4Prompt lang={lang} onNext={next} onPrev={prev} />;
-      case 3: return <ChatPage5Interaction lang={lang} onNext={next} onPrev={prev} />;
-      case 4: return <ChatPage6Upgrade lang={lang} onNext={next} onPrev={prev} />;
-      case 5: return <ChatPage7Deploy lang={lang} onPrev={prev} onHome={goHome} />;
+      case 1: return <TttPage1Intro lang={lang} onNext={next} />;
+      case 2: return <TttPage2Prompt lang={lang} onNext={next} onPrev={prev} />;
+      case 3: return <TttPage3Logic lang={lang} onNext={next} onPrev={prev} />;
+      case 4: return <TttPage4Personalize lang={lang} onNext={next} onPrev={prev} />;
+      case 5: return <TttPage5Deploy lang={lang} onPrev={prev} onHome={goHome} />;
       default: return null;
     }
   };
 
   const renderLesson4 = () => {
     switch (page) {
-      case 1: return <TttPage1Intro lang={lang} onNext={next} />;
-      case 2: return <TttPage2Prompt lang={lang} onNext={next} onPrev={prev} />;
-      case 3: return <TttPage3Logic lang={lang} onNext={next} onPrev={prev} />;
-      case 4: return <TttPage4Personalize lang={lang} onNext={next} onPrev={prev} />;
-      case 5: return <TttPage5Deploy lang={lang} onPrev={prev} onHome={goHome} />;
+      case 1: return <ChatPage1Intro lang={lang} onNext={next} />;
+      case 2: return <ChatPage4Prompt lang={lang} onNext={next} onPrev={prev} />;
+      case 3: return <ChatPage5Interaction lang={lang} onNext={next} onPrev={prev} />;
+      case 4: return <ChatPage6Upgrade lang={lang} onNext={next} onPrev={prev} />;
+      case 5: return <ChatPage7Deploy lang={lang} onPrev={prev} onHome={goHome} />;
       default: return null;
     }
   };
