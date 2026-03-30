@@ -104,57 +104,112 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // Chat Lesson
   "chatTitle": { en: "Chat AI Web App", ko: "채팅 AI 웹 앱" },
-  "chatSubtitle": { en: "Build a chat interface and learn JavaScript", ko: "채팅 인터페이스를 만들고 JavaScript를 배우세요" },
+  "chatSubtitle": { en: "Build a real AI chat app using a free API", ko: "무료 API를 사용하여 진짜 AI 채팅 앱 만들기" },
   "chatWhatIs": { en: "What is a Chat App?", ko: "채팅 앱이란?" },
   "chatWhatIsDesc": {
-    en: "A chat app lets users send and receive messages in real-time. We'll build a simple UI — no backend required!",
-    ko: "채팅 앱은 사용자가 실시간으로 메시지를 주고받을 수 있게 합니다. 간단한 UI를 만들어 볼게요 — 백엔드는 필요 없습니다!"
+    en: "A chat app lets you send messages and get AI-powered responses! We'll use OpenRouter's free API to connect to a real AI model.",
+    ko: "채팅 앱은 메시지를 보내고 AI 응답을 받을 수 있게 합니다! OpenRouter의 무료 API를 사용하여 실제 AI 모델에 연결합니다."
   },
   "chatWhatBuild": { en: "What will we build?", ko: "무엇을 만들까요?" },
-  "chatGoal1": { en: "Build a chat UI", ko: "채팅 UI 만들기" },
+  "chatGoal1": { en: "Chat UI with message bubbles", ko: "메시지 말풍선이 있는 채팅 UI" },
   "chatGoal2": { en: "Style with CSS", ko: "CSS로 스타일링하기" },
   "chatGoal3": { en: "Deploy online", ko: "온라인에 배포하기" },
-  "chatGoalJs": { en: "Learn JavaScript interaction", ko: "JavaScript 인터랙션 배우기" },
+  "chatGoalJs": { en: "Connect to a free AI model via OpenRouter", ko: "OpenRouter를 통해 무료 AI 모델에 연결" },
 
   "chatHtmlDiffTitle": { en: "How is this different?", ko: "무엇이 다를까요?" },
   "chatHtmlDiffDesc": {
-    en: "Unlike a static profile page, a chat app uses JavaScript to dynamically add messages. The HTML structure includes an input area and a message container that updates in real-time:",
-    ko: "정적인 프로필 페이지와 달리, 채팅 앱은 JavaScript를 사용하여 동적으로 메시지를 추가합니다. HTML 구조에는 입력 영역과 실시간으로 업데이트되는 메시지 컨테이너가 포함됩니다:"
+    en: "Unlike previous projects, this app calls a real AI API! Your messages go to an AI model, and it responds. The HTML includes a message area and input — but JavaScript does the heavy lifting:",
+    ko: "이전 프로젝트와 달리, 이 앱은 실제 AI API를 호출합니다! 메시지가 AI 모델로 전송되고 응답을 받습니다. HTML에는 메시지 영역과 입력이 포함되지만 JavaScript가 핵심 역할을 합니다:"
+  },
+
+  // Chat API Setup
+  "chatApiTitle": { en: "Get Your Free API Key", ko: "무료 API 키 받기" },
+  "chatApiDesc": { en: "We'll use OpenRouter to access free AI models — no credit card needed!", ko: "OpenRouter를 사용하여 무료 AI 모델에 접근합니다 — 신용카드 불필요!" },
+  "chatApiWhat": { en: "What is OpenRouter?", ko: "OpenRouter란?" },
+  "chatApiWhatDesc": {
+    en: "OpenRouter is a service that gives you access to many AI models through one API. Some models are completely free — perfect for our chat app!",
+    ko: "OpenRouter는 하나의 API로 여러 AI 모델에 접근할 수 있게 해주는 서비스입니다. 일부 모델은 완전히 무료 — 우리 채팅 앱에 완벽합니다!"
+  },
+  "chatApiStep1": {
+    en: "Go to openrouter.ai and click 'Sign Up'",
+    ko: "openrouter.ai에 접속하고 'Sign Up'을 클릭하세요"
+  },
+  "chatApiStep2": {
+    en: "Sign in with your Google account",
+    ko: "Google 계정으로 로그인하세요"
+  },
+  "chatApiStep3": {
+    en: "Go to 'Keys' in the menu and click 'Create Key'",
+    ko: "메뉴에서 'Keys'로 가서 'Create Key'를 클릭하세요"
+  },
+  "chatApiStep4": {
+    en: "Copy the key — you'll paste it into the prompt!",
+    ko: "키를 복사하세요 — 프롬프트에 붙여넣을 거예요!"
   },
 
   "chatPromptTitle": { en: "AI Prompt for Chat App", ko: "채팅 앱 AI 프롬프트" },
-  "chatPromptDesc": { en: "Copy this prompt and paste it into your AI IDE to generate the chat app!", ko: "이 프롬프트를 복사하여 AI IDE에 붙여넣어 채팅 앱을 생성하세요!" },
+  "chatPromptDesc": { en: "Copy this prompt and paste it into your AI IDE. Replace YOUR_API_KEY with the key you just got!", ko: "이 프롬프트를 복사하여 AI IDE에 붙여넣으세요. YOUR_API_KEY를 방금 받은 키로 교체하세요!" },
   "chatPromptText": {
-    en: "Create a simple chat UI using HTML, CSS, and JavaScript. Include: a message display area, input field, send button, and basic styling with chat bubbles. Messages should appear when the send button is clicked or Enter is pressed.",
-    ko: "HTML, CSS, JavaScript를 사용하여 간단한 채팅 UI를 만들어주세요. 메시지 표시 영역, 입력 필드, 전송 버튼, 채팅 말풍선 스타일링을 포함해주세요. 전송 버튼 클릭이나 Enter 키를 누르면 메시지가 나타나야 합니다."
+    en: `Create a simple AI chat app using HTML, CSS, and JavaScript. 
+
+Features:
+- Clean chat UI with message bubbles (user on right, AI on left)
+- Input field and send button
+- Send messages with Enter key or click
+- Connect to OpenRouter API to get AI responses
+- Use the free model: deepseek/deepseek-chat-v3-0324:free
+- Show a loading indicator while AI is responding
+
+Use this API setup:
+- Endpoint: https://openrouter.ai/api/v1/chat/completions
+- API Key: YOUR_API_KEY (replace with your key)
+- Model: deepseek/deepseek-chat-v3-0324:free
+
+Use a modern, clean design with soft colors and smooth animations.`,
+    ko: `HTML, CSS, JavaScript를 사용하여 간단한 AI 채팅 앱을 만들어주세요.
+
+기능:
+- 메시지 말풍선이 있는 깔끔한 채팅 UI (사용자는 오른쪽, AI는 왼쪽)
+- 입력 필드와 전송 버튼
+- Enter 키 또는 클릭으로 메시지 전송
+- OpenRouter API에 연결하여 AI 응답 받기
+- 무료 모델 사용: deepseek/deepseek-chat-v3-0324:free
+- AI가 응답하는 동안 로딩 표시
+
+API 설정:
+- 엔드포인트: https://openrouter.ai/api/v1/chat/completions
+- API 키: YOUR_API_KEY (본인의 키로 교체)
+- 모델: deepseek/deepseek-chat-v3-0324:free
+
+현대적이고 깔끔한 디자인과 부드러운 색상, 부드러운 애니메이션을 사용해주세요.`
   },
 
   "chatJsTitle": { en: "How Your Chat Works", ko: "채팅이 어떻게 작동하나요" },
   "chatJsDesc": { en: "A quick look at what AI built for you — no need to memorize this!", ko: "AI가 만들어준 것을 간단히 살펴봅시다 — 외울 필요 없어요!" },
-  "chatJsPart1": { en: "Get user input from the text field", ko: "텍스트 필드에서 사용자 입력 가져오기" },
-  "chatJsPart2": { en: "Create a new message element and display it", ko: "새 메시지 요소를 만들어 표시하기" },
-  "chatJsPart3": { en: "Send with Enter key or click", ko: "Enter 키 또는 클릭으로 전송" },
+  "chatJsPart1": { en: "Gets your message from the input field", ko: "입력 필드에서 메시지를 가져옵니다" },
+  "chatJsPart2": { en: "Sends it to the AI model via OpenRouter API", ko: "OpenRouter API를 통해 AI 모델에 전송합니다" },
+  "chatJsPart3": { en: "Displays the AI's response as a chat bubble", ko: "AI의 응답을 채팅 말풍선으로 표시합니다" },
 
   "chatPersonalizeTitle": { en: "Personalize Your Chat App", ko: "채팅 앱 개인화하기" },
   "chatPersonalizeDesc": { en: "Make the AI-generated chat app your own!", ko: "AI가 생성한 채팅 앱을 나만의 것으로 만드세요!" },
   "chatPersonalize1": { en: "Change the color scheme of chat bubbles", ko: "채팅 말풍선의 색상을 변경하세요" },
   "chatPersonalize2": { en: "Add your app name and header", ko: "앱 이름과 헤더를 추가하세요" },
   "chatPersonalize3": { en: "Customize fonts and bubble styles", ko: "글꼴과 말풍선 스타일을 커스터마이즈하세요" },
-  "chatPersonalize4": { en: "Add auto-reply messages for fun", ko: "재미있는 자동 답장 메시지를 추가하세요" },
+  "chatPersonalize4": { en: "Give the AI a custom personality in the system prompt", ko: "시스템 프롬프트에서 AI에 맞춤 성격을 부여하세요" },
 
   "chatUpgradeTitle": { en: "Upgrade Ideas", ko: "업그레이드 아이디어" },
-  "chatUpgradeDesc": { en: "Take your chat app to the next level!", ko: "채팅 앱을 다음 단계로 발전시켜 보세요!" },
-  "chatUpgrade1": { en: "Connect AI API", ko: "AI API 연결" },
-  "chatUpgrade1Desc": { en: "Add OpenAI or another AI to auto-reply to messages", ko: "OpenAI 또는 다른 AI를 연결하여 자동 답장 기능 추가" },
-  "chatUpgrade2": { en: "Typing Effect", ko: "타이핑 효과" },
-  "chatUpgrade2Desc": { en: "Show a typing animation when AI is responding", ko: "AI가 응답할 때 타이핑 애니메이션 표시" },
+  "chatUpgradeDesc": { en: "Take your chat app to the next level with these prompts!", ko: "이 프롬프트들로 채팅 앱을 다음 단계로 발전시켜 보세요!" },
+  "chatUpgrade1": { en: "Rate Limit Timer", ko: "요청 제한 타이머" },
+  "chatUpgrade1Desc": { en: "Add a cooldown timer that shows how long until you can send the next message (free models have rate limits!)", ko: "다음 메시지를 보낼 수 있을 때까지의 쿨다운 타이머를 추가하세요 (무료 모델은 요청 제한이 있습니다!)" },
+  "chatUpgrade2": { en: "AI Personality", ko: "AI 성격 설정" },
+  "chatUpgrade2Desc": { en: "Add a dropdown to switch the AI's personality — friendly, sarcastic, pirate, teacher, etc.", ko: "AI의 성격을 전환하는 드롭다운 추가 — 친근한, 비꼬는, 해적, 선생님 등" },
   "chatUpgrade3": { en: "Custom Theme", ko: "커스텀 테마" },
   "chatUpgrade3Desc": { en: "Let users switch between dark and light mode", ko: "사용자가 다크/라이트 모드를 전환할 수 있게 하기" },
-  "chatUpgradeTip": { en: "💡 Start simple, then improve!", ko: "💡 간단하게 시작한 후 개선하세요!" },
-  "chatUpgradeTipDesc": { en: "Get the basic version working first, then add features one at a time.", ko: "먼저 기본 버전을 완성한 후, 기능을 하나씩 추가하세요." },
+  "chatUpgradeTip": { en: "💡 About rate limits", ko: "💡 요청 제한에 대해" },
+  "chatUpgradeTipDesc": { en: "Free models on OpenRouter have rate limits (about 20 requests/minute). Adding a timer helps users know when they can send again!", ko: "OpenRouter의 무료 모델은 요청 제한이 있습니다 (약 20요청/분). 타이머를 추가하면 사용자가 언제 다시 보낼 수 있는지 알 수 있습니다!" },
 
-  "chatCongrats": { en: "🎉 Your chat app is live!", ko: "🎉 채팅 앱이 완성되었습니다!" },
-  "chatCongratsDesc": { en: "Share it with friends and keep improving. You built a real web app!", ko: "친구들에게 공유하고 계속 개선하세요. 진짜 웹 앱을 만들었습니다!" },
+  "chatCongrats": { en: "🎉 Your AI chat app is live!", ko: "🎉 AI 채팅 앱이 완성되었습니다!" },
+  "chatCongratsDesc": { en: "You built a real AI-powered web app! Share it with friends and keep improving.", ko: "진짜 AI 기반 웹 앱을 만들었습니다! 친구들에게 공유하고 계속 개선하세요." },
 
   // Tic Tac Toe Lesson
   "tttTitle": { en: "Tic Tac Toe Game", ko: "틱택토 게임" },

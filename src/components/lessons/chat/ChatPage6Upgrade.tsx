@@ -1,5 +1,5 @@
 import { t, Lang } from "@/data/translations";
-import { Cpu, Sparkles, Palette } from "lucide-react";
+import { Timer, Sparkles, Palette } from "lucide-react";
 import HintButton from "@/components/HintButton";
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 
 const ChatPage6Upgrade = ({ lang, onNext, onPrev }: Props) => {
   const ideas = [
-    { icon: Cpu, title: t("chatUpgrade1", lang), desc: t("chatUpgrade1Desc", lang) },
+    { icon: Timer, title: t("chatUpgrade1", lang), desc: t("chatUpgrade1Desc", lang) },
     { icon: Sparkles, title: t("chatUpgrade2", lang), desc: t("chatUpgrade2Desc", lang) },
     { icon: Palette, title: t("chatUpgrade3", lang), desc: t("chatUpgrade3Desc", lang) },
   ];
@@ -40,6 +40,24 @@ const ChatPage6Upgrade = ({ lang, onNext, onPrev }: Props) => {
         lang={lang}
         label={t("hintBtnLabel", lang)}
         prompt={t("chatHintPrompt", lang)}
+      />
+
+      <HintButton
+        lang={lang}
+        label={lang === "en" ? "💡 Rate limit timer prompt" : "💡 요청 제한 타이머 프롬프트"}
+        prompt={lang === "en"
+          ? "Add a cooldown timer to my chat app. After each message, show a countdown timer (e.g. 3 seconds) before the user can send another message. Disable the send button during cooldown and show the remaining time on the button."
+          : "채팅 앱에 쿨다운 타이머를 추가해주세요. 메시지를 보낸 후 사용자가 다시 보낼 수 있을 때까지 카운트다운 타이머(예: 3초)를 표시하세요. 쿨다운 중에는 전송 버튼을 비활성화하고 남은 시간을 버튼에 표시하세요."
+        }
+      />
+
+      <HintButton
+        lang={lang}
+        label={lang === "en" ? "💡 AI personality prompt" : "💡 AI 성격 프롬프트"}
+        prompt={lang === "en"
+          ? "Add a personality selector dropdown to my chat app with options like: Friendly, Sarcastic, Pirate, Teacher, Comedian. When the user selects a personality, change the system prompt sent to the API to match that personality."
+          : "채팅 앱에 성격 선택 드롭다운을 추가해주세요. 옵션: 친근한, 비꼬는, 해적, 선생님, 코미디언. 사용자가 성격을 선택하면 API에 보내는 시스템 프롬프트를 해당 성격에 맞게 변경하세요."
+        }
       />
 
       <div className="tip-box">
