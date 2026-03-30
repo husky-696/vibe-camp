@@ -27,10 +27,10 @@ const translations: Record<string, Record<Lang, string>> = {
   "lesson0Desc": { en: "Get started with the basics — HTML, CSS, and how to set up your tools", ko: "기초부터 시작하세요 — HTML, CSS, 그리고 도구 설정 방법" },
   "lesson1Title": { en: "Profile Website Project", ko: "프로필 웹사이트 프로젝트" },
   "lesson1Desc": { en: "Use AI to vibe-code your personal profile page", ko: "AI를 사용하여 나만의 프로필 페이지를 바이브 코딩하세요" },
-  "lesson2Title": { en: "Chat AI Web App", ko: "채팅 AI 웹 앱" },
-  "lesson2Desc": { en: "Build a chat interface and learn JavaScript interaction", ko: "채팅 인터페이스를 만들고 JavaScript 인터랙션을 배우세요" },
-  "lesson3Title": { en: "Tic Tac Toe Game", ko: "틱택토 게임" },
-  "lesson3Desc": { en: "Build a 1v1 game with scores, animations, and win/lose effects", ko: "점수, 애니메이션, 승패 효과가 있는 1대1 게임을 만드세요" },
+  "lesson2Title": { en: "Tic Tac Toe Game", ko: "틱택토 게임" },
+  "lesson2Desc": { en: "Build a 1v1 game with scores, animations, and win/lose effects", ko: "점수, 애니메이션, 승패 효과가 있는 1대1 게임을 만드세요" },
+  "lesson3Title": { en: "Chat AI Web App", ko: "채팅 AI 웹 앱" },
+  "lesson3Desc": { en: "Build a chat interface and learn JavaScript interaction", ko: "채팅 인터페이스를 만들고 JavaScript 인터랙션을 배우세요" },
   "backToHome": { en: "Back to Lessons", ko: "수업 목록으로" },
 
   // Page 2

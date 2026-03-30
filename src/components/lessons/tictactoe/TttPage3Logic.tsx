@@ -1,45 +1,10 @@
 import { t, Lang } from "@/data/translations";
-import CodeBlock from "@/components/CodeBlock";
 
 interface Props {
   lang: Lang;
   onNext: () => void;
   onPrev: () => void;
 }
-
-const jsCode = `// === Tic Tac Toe Game Logic ===
-
-// The board: 9 empty cells (like a 3x3 grid stored as a list)
-let board = ['', '', '', '', '', '', '', '', ''];
-
-// Who's playing right now? X always goes first
-let currentPlayer = 'X';
-
-// Keep track of how many games each player has won
-let scores = { X: 0, O: 0 };
-
-// All the ways you can win (3 in a row)
-const winCombos = [
-  [0,1,2], [3,4,5], [6,7,8], // Rows: top, middle, bottom
-  [0,3,6], [1,4,7], [2,5,8], // Columns: left, center, right
-  [0,4,8], [2,4,6]           // Diagonals: corner to corner
-];
-
-// Check if someone has won
-function checkWin() {
-  for (let combo of winCombos) {
-    const [a, b, c] = combo;  // Get the 3 positions to check
-    // If all 3 cells match and aren't empty → we have a winner!
-    if (board[a] && board[a] === board[b] 
-        && board[a] === board[c]) {
-      return { winner: board[a], combo }; // Return who won and which line
-    }
-  }
-  // If every cell is filled but no winner → it's a draw
-  if (board.every(cell => cell)) return { winner: 'draw' };
-  // Otherwise, game continues
-  return null;
-}`;
 
 const TttPage3Logic = ({ lang, onNext, onPrev }: Props) => (
   <div className="space-y-6">
@@ -49,17 +14,40 @@ const TttPage3Logic = ({ lang, onNext, onPrev }: Props) => (
     </div>
 
     <div className="lesson-card">
-      <CodeBlock code={jsCode} language="javascript" />
+      <h2 className="text-lg font-semibold mb-4 text-primary">
+        🧠 {lang === "en" ? "Quick Overview" : "간단한 개요"}
+      </h2>
+      <p className="text-foreground/80 mb-4">
+        {lang === "en"
+          ? "You don't need to write this code — AI did it for you! But here's a quick idea of what's happening inside your game:"
+          : "이 코드를 직접 작성할 필요는 없습니다 — AI가 해줬어요! 게임 내부에서 무슨 일이 일어나는지 간단히 알아봅시다:"}
+      </p>
+      <ul className="space-y-3 text-foreground/80">
+        <li className="flex items-start gap-3">
+          <span className="text-xl">🎯</span>
+          <span>{t("tttJsPart1", lang)}</span>
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-xl">🔄</span>
+          <span>{t("tttJsPart2", lang)}</span>
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-xl">🏆</span>
+          <span>{t("tttJsPart3", lang)}</span>
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-xl">📊</span>
+          <span>{t("tttJsPart4", lang)}</span>
+        </li>
+      </ul>
     </div>
 
-    <div className="lesson-card">
-      <h2 className="text-lg font-semibold mb-3 text-primary">📖 {lang === "en" ? "How it works" : "어떻게 작동하나요"}</h2>
-      <ul className="space-y-2 text-foreground/80">
-        <li>🎯 {t("tttJsPart1", lang)}</li>
-        <li>🔄 {t("tttJsPart2", lang)}</li>
-        <li>🏆 {t("tttJsPart3", lang)}</li>
-        <li>📊 {t("tttJsPart4", lang)}</li>
-      </ul>
+    <div className="lesson-card bg-accent/10 border-accent/20">
+      <p className="text-sm text-muted-foreground italic">
+        💡 {lang === "en"
+          ? "Remember: In vibe coding, AI handles the complex logic. Your job is to describe what you want and personalize the result!"
+          : "기억하세요: 바이브 코딩에서는 AI가 복잡한 로직을 처리합니다. 여러분의 역할은 원하는 것을 설명하고 결과를 개인화하는 것입니다!"}
+      </p>
     </div>
 
     <div className="flex justify-between pt-4">

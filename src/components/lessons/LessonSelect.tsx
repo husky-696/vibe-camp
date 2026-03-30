@@ -23,18 +23,18 @@ const LessonSelect = ({ lang, onSelectLesson }: Props) => {
       bg: "bg-accent/30",
     },
     {
-      icon: MessageCircle,
+      icon: Gamepad2,
       title: t("lesson2Title", lang),
       desc: t("lesson2Desc", lang),
-      color: "text-secondary-foreground",
-      bg: "bg-secondary/30",
-    },
-    {
-      icon: Gamepad2,
-      title: t("lesson3Title", lang),
-      desc: t("lesson3Desc", lang),
       color: "text-primary",
       bg: "bg-primary/10",
+    },
+    {
+      icon: MessageCircle,
+      title: t("lesson3Title", lang),
+      desc: t("lesson3Desc", lang),
+      color: "text-secondary-foreground",
+      bg: "bg-secondary/30",
     },
   ];
 

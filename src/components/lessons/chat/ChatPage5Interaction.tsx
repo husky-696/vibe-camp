@@ -1,38 +1,10 @@
 import { t, Lang } from "@/data/translations";
-import CodeBlock from "@/components/CodeBlock";
 
 interface Props {
   lang: Lang;
   onNext: () => void;
   onPrev: () => void;
 }
-
-const jsCode = `// Step 1: Find the HTML elements we need
-const input = document.getElementById('msgInput');   // The text input field
-const sendBtn = document.getElementById('sendBtn');  // The send button
-const messages = document.getElementById('messages'); // The message container
-
-// Step 2: Create a function that sends a message
-function sendMessage() {
-  const text = input.value.trim();  // Get the typed text (remove extra spaces)
-  if (!text) return;                // If empty, do nothing
-
-  // Step 3: Create a new message bubble
-  const msg = document.createElement('div');  // Make a new <div> element
-  msg.className = 'message sent';             // Style it as a "sent" message
-  msg.textContent = text;                     // Put the text inside it
-  messages.appendChild(msg);                  // Add it to the message area
-
-  // Step 4: Clean up
-  input.value = '';                           // Clear the input field
-  messages.scrollTop = messages.scrollHeight; // Scroll to the newest message
-}
-
-// Step 5: Listen for user actions
-sendBtn.addEventListener('click', sendMessage);    // Click the send button
-input.addEventListener('keypress', (e) => {        // Or press Enter
-  if (e.key === 'Enter') sendMessage();
-});`;
 
 const ChatPage5Interaction = ({ lang, onNext, onPrev }: Props) => (
   <div className="space-y-6">
@@ -42,15 +14,27 @@ const ChatPage5Interaction = ({ lang, onNext, onPrev }: Props) => (
     </div>
 
     <div className="lesson-card">
-      <CodeBlock code={jsCode} language="javascript" />
-    </div>
-
-    <div className="lesson-card">
-      <h2 className="text-lg font-semibold mb-3 text-primary">📖 {lang === "en" ? "How it works" : "어떻게 작동하나요"}</h2>
-      <ul className="space-y-2 text-foreground/80">
-        <li>📝 {t("chatJsPart1", lang)}</li>
-        <li>📨 {t("chatJsPart2", lang)}</li>
-        <li>⌨️ {t("chatJsPart3", lang)}</li>
+      <h2 className="text-lg font-semibold mb-4 text-primary">
+        🧠 {lang === "en" ? "Quick Overview" : "간단한 개요"}
+      </h2>
+      <p className="text-foreground/80 mb-4">
+        {lang === "en"
+          ? "AI wrote all the JavaScript for you! Here's a simple breakdown of what's happening under the hood:"
+          : "AI가 모든 JavaScript를 작성했습니다! 내부에서 무슨 일이 일어나는지 간단히 알아봅시다:"}
+      </p>
+      <ul className="space-y-3 text-foreground/80">
+        <li className="flex items-start gap-3">
+          <span className="text-xl">📝</span>
+          <span>{t("chatJsPart1", lang)}</span>
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-xl">📨</span>
+          <span>{t("chatJsPart2", lang)}</span>
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-xl">⌨️</span>
+          <span>{t("chatJsPart3", lang)}</span>
+        </li>
       </ul>
     </div>
 
@@ -63,6 +47,14 @@ const ChatPage5Interaction = ({ lang, onNext, onPrev }: Props) => (
         <li>✨ {t("chatPersonalize3", lang)}</li>
         <li>🤖 {t("chatPersonalize4", lang)}</li>
       </ul>
+    </div>
+
+    <div className="lesson-card bg-accent/10 border-accent/20">
+      <p className="text-sm text-muted-foreground italic">
+        💡 {lang === "en"
+          ? "Remember: In vibe coding, AI handles the complex logic. Your job is to describe what you want and personalize the result!"
+          : "기억하세요: 바이브 코딩에서는 AI가 복잡한 로직을 처리합니다. 여러분의 역할은 원하는 것을 설명하고 결과를 개인화하는 것입니다!"}
+      </p>
     </div>
 
     <div className="flex justify-between pt-4">
