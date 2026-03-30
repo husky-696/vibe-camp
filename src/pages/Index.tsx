@@ -22,12 +22,13 @@ import TttPage4Personalize from "@/components/lessons/tictactoe/TttPage4Personal
 import TttPage5Deploy from "@/components/lessons/tictactoe/TttPage5Deploy";
 // Lesson 4: Chat App
 import ChatPage1Intro from "@/components/lessons/chat/ChatPage1Intro";
+import ChatPage2ApiSetup from "@/components/lessons/chat/ChatPage2ApiSetup";
 import ChatPage4Prompt from "@/components/lessons/chat/ChatPage4Prompt";
 import ChatPage5Interaction from "@/components/lessons/chat/ChatPage5Interaction";
 import ChatPage6Upgrade from "@/components/lessons/chat/ChatPage6Upgrade";
 import ChatPage7Deploy from "@/components/lessons/chat/ChatPage7Deploy";
 
-const LESSON_PAGES: Record<number, number> = { 1: 5, 2: 3, 3: 5, 4: 5 };
+const LESSON_PAGES: Record<number, number> = { 1: 5, 2: 3, 3: 5, 4: 6 };
 
 const Index = () => {
   const [lesson, setLesson] = useState<number | null>(null);
@@ -111,10 +112,11 @@ const Index = () => {
   const renderLesson4 = () => {
     switch (page) {
       case 1: return <ChatPage1Intro lang={lang} onNext={next} />;
-      case 2: return <ChatPage4Prompt lang={lang} onNext={next} onPrev={prev} />;
-      case 3: return <ChatPage5Interaction lang={lang} onNext={next} onPrev={prev} />;
-      case 4: return <ChatPage6Upgrade lang={lang} onNext={next} onPrev={prev} />;
-      case 5: return <ChatPage7Deploy lang={lang} onPrev={prev} onHome={goHome} />;
+      case 2: return <ChatPage2ApiSetup lang={lang} onNext={next} onPrev={prev} />;
+      case 3: return <ChatPage4Prompt lang={lang} onNext={next} onPrev={prev} />;
+      case 4: return <ChatPage5Interaction lang={lang} onNext={next} onPrev={prev} />;
+      case 5: return <ChatPage6Upgrade lang={lang} onNext={next} onPrev={prev} />;
+      case 6: return <ChatPage7Deploy lang={lang} onPrev={prev} onHome={goHome} />;
       default: return null;
     }
   };
