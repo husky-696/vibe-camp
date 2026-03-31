@@ -250,6 +250,9 @@ API 설정:
   "tttCongrats": { en: "🎉 Your Tic Tac Toe game is live!", ko: "🎉 틱택토 게임이 완성되었습니다!" },
   "tttCongratsDesc": { en: "Challenge your friends and keep adding features. You built a real game!", ko: "친구들에게 도전하고 기능을 계속 추가하세요. 진짜 게임을 만들었습니다!" },
 
+  "tttUpgradeTip": { en: "💡 About game balance", ko: "💡 게임 균형에 대해" },
+  "tttUpgradeTipDesc": { en: "When adding new features, think about game balance. Sound effects should enhance but not distract, and visual effects should be clear but not overwhelming!", ko: "새 기능을 추가할 때 게임 균형을 생각하세요. 효과음은 방해되지 않으면서 향상시켜야 하고, 시각 효과는 명확하지만 과하지 않아야 합니다!" },
+
   // Hint buttons
   "hintBtnLabel": { en: "💡 Show example prompt", ko: "💡 예시 프롬프트 보기" },
   "profileHintPrompt": {

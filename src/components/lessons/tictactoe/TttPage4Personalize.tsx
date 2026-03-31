@@ -41,8 +41,8 @@ const TttPage4Personalize = ({ lang, onNext, onPrev }: Props) => {
       />
 
       <div className="tip-box">
-        <h3 className="font-semibold mb-2">{t("chatUpgradeTip", lang)}</h3>
-        <p className="text-sm">{t("chatUpgradeTipDesc", lang)}</p>
+        <h3 className="font-semibold mb-2">{t("tttUpgradeTip", lang)}</h3>
+        <p className="text-sm">{t("tttUpgradeTipDesc", lang)}</p>
       </div>
 
       <div className="flex justify-between pt-4">
