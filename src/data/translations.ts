@@ -6,7 +6,7 @@ export const t = (key: string, lang: Lang): string => {
 
 const translations: Record<string, Record<Lang, string>> = {
   // Page 1
-  "title": { en: "Vibe Coding Workshop", ko: "바이브 코딩 워크숍" },
+  "title": { en: "Vibe Camp", ko: "바이브 캠프" },
   "subtitle": { en: "Learn to build websites with AI", ko: "AI와 함께 웹사이트 만들기" },
   "whatIsVibe": { en: "What is Vibe Coding?", ko: "바이브 코딩이란?" },
   "vibeDesc": {

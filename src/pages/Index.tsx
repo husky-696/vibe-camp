@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Lang } from "@/data/translations";
+import { Home } from "lucide-react";
+import { Lang, t } from "@/data/translations";
 import LanguageToggle from "@/components/LanguageToggle";
 import ProgressBar from "@/components/ProgressBar";
 import LessonSelect from "@/components/lessons/LessonSelect";
@@ -134,6 +135,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen py-8 px-4">
+      {/* Home Button - Top Left */}
+      {lesson !== null && (
+        <button
+          onClick={goHome}
+          className="fixed top-4 left-4 z-50 bg-primary text-primary-foreground p-2 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
+          title={t("backToHome", lang)}
+        >
+          <Home className="w-5 h-5" />
+        </button>
+      )}
+
       <LanguageToggle
         lang={lang}
         onToggle={() => setLang(l => l === "en" ? "ko" : "en")}
