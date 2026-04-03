@@ -62,23 +62,6 @@ npm run dev
 
 Navigate to http://localhost:5173 in your browser to start learning!
 
-## 📚 Project Structure
-
-src/
-├── components/
-│   ├── lessons/
-│   │   ├── chat/          (6 lesson files)
-│   │   ├── tictactoe/     (5 lesson files)
-│   │   ├── Page1-7*.tsx   (Profile Website & Web Basics)
-│   │   └── [Helper components]
-│   ├── ui/                (shadcn/ui components)
-│   └── [Core components]
-├── data/
-├── hooks/
-├── lib/
-├── pages/
-└── [Root files]
-
 ## 🌐 Features
 
 - **Multi-language Support**: Learn in English or Korean
