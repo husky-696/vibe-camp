@@ -1,25 +1,33 @@
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
 
-export default defineConfig({
-  plugins: [vue()],
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => ({
+  server: {
+    host: "::",
+    port: 8080,
+    hmr: {
+      overlay: false,
+    },
+  },
+  plugins: [react()],
   build: {
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['vue', 'vue-router'],
-          ui: ['some-ui-library'],
-          router: ['vue-router'],
-        },
-      },
+          vendor: ['react', 'react-dom'],
+          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', 'framer-motion'],
+          router: ['react-router-dom']
+        }
+      }
     },
-  },
-  server: {
-    port: 8080,
+    chunkSizeWarningLimit: 1000
   },
   resolve: {
     alias: {
-      '@': '/src',
+      "@": path.resolve(__dirname, "./src"),
     },
+    dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
   },
-});
+}));
