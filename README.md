@@ -66,24 +66,18 @@ Navigate to http://localhost:5173 in your browser to start learning!
 
 src/
 ├── components/
-│   ├── lessons/           # Lesson page components
-│   │   ├── chat/         # Chat app lesson
-│   │   ├── tictactoe/    # Tic Tac Toe lesson
-│   │   ├── Page1Intro.tsx through Page7Deploy.tsx
-│   │   ├── LessonSelect.tsx
-│   │   └── BasicsComplete.tsx
-│   ├── ui/               # shadcn/ui components
-│   ├── CodeBlock.tsx     # Syntax-highlighted code display
-│   ├── HintButton.tsx    # AI hint system
-│   ├── LanguageToggle.tsx # EN/KO language switcher
-│   ├── ProgressBar.tsx   # Lesson progress tracking
-│   └── Confetti.tsx      # Celebration animation
+│   ├── lessons/
+│   │   ├── chat/          (6 lesson files)
+│   │   ├── tictactoe/     (5 lesson files)
+│   │   ├── Page1-7*.tsx   (Profile Website & Web Basics)
+│   │   └── [Helper components]
+│   ├── ui/                (shadcn/ui components)
+│   └── [Core components]
 ├── data/
-│   └── translations.ts   # Multi-language support (EN, KO)
+├── hooks/
+├── lib/
 ├── pages/
-│   ├── Index.tsx         # Main app router
-│   └── NotFound.tsx      # 404 page
-└── App.tsx, main.tsx, index.css
+└── [Root files]
 
 ## 🌐 Features
 
