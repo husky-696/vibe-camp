@@ -1,4 +1,4 @@
-# Vibe Camp - Learn to Build with AI 🚀 🖤
+# 🖤 Vibe Camp - Learn to Build with AI 🚀 
 
 Vibe Camp is an interactive learning platform designed to teach web development fundamentals and advanced concepts through hands-on lessons. Students learn by building real projects with AI assistance, progressing from basic HTML/CSS to building interactive applications.
 
