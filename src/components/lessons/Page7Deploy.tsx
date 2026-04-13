@@ -1,54 +1,57 @@
-import { t, Lang } from "@/data/translations";
-import { Upload, Globe, PartyPopper, Home } from "lucide-react";
-import Confetti from "@/components/Confetti";
+import { Lang, t } from "@/data/translations";
+import { ArrowLeft, ArrowRight, Globe } from "lucide-react";
+import { useEffect } from "react";
+import confetti from "canvas-confetti";
 
 interface Props {
   lang: Lang;
   onPrev: () => void;
-  onHome: () => void;
+  onNextLesson: () => void;
 }
 
-const Page7Deploy = ({ lang, onPrev, onHome }: Props) => {
-  const steps = [
-    { icon: Globe, text: t("step1", lang), num: "1" },
-    { icon: Upload, text: t("step2", lang), num: "2" },
-    { icon: PartyPopper, text: t("step3", lang), num: "3" },
-  ];
+const Page7Deploy = ({ lang, onPrev, onNextLesson }: Props) => {
+  useEffect(() => {
+    confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
+  }, []);
 
   return (
-    <div className="space-y-6">
-      <Confetti />
-      <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold mb-2">🚀 {t("deployTitle", lang)}</h1>
+    <div className="space-y-8">
+      <div className="space-y-2 text-center">
+        <h2 className="text-3xl font-bold text-foreground">{t("deployTitle", lang)}</h2>
         <p className="text-muted-foreground">{t("deployDesc", lang)}</p>
       </div>
 
-      <div className="space-y-4">
-        {steps.map(({ icon: Icon, text, num }) => (
-          <div key={num} className="lesson-card flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <span className="text-primary font-bold">{num}</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Icon className="w-5 h-5 text-primary" />
-              <span className="text-foreground/80">{text}</span>
-            </div>
+      <div className="lesson-card space-y-6">
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary font-bold">1</span>
+            <p className="text-foreground">{t("step1", lang)}</p>
           </div>
-        ))}
-      </div>
+          <div className="flex items-center gap-3">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary font-bold">2</span>
+            <p className="text-foreground">{t("step2", lang)}</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary font-bold">3</span>
+            <p className="text-foreground">{t("step3", lang)}</p>
+          </div>
+        </div>
 
-      <div className="lesson-card text-center py-8 bg-primary/5">
-        <PartyPopper className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h2 className="text-2xl font-bold mb-2">{t("congrats", lang)}</h2>
-        <p className="text-muted-foreground">{t("congratsDesc", lang)}</p>
-      </div>
+        <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4 text-center mt-6">
+          <p className="font-bold text-green-600 dark:text-green-400 mb-1">{t("congrats", lang)}</p>
+          <p className="text-sm text-green-700/80 dark:text-green-300/80">{t("congratsDesc", lang)}</p>
+        </div>
 
-      <div className="flex justify-between pt-4">
-        <button onClick={onPrev} className="text-muted-foreground hover:text-foreground transition-colors font-medium">{t("prev", lang)}</button>
-        <button onClick={onHome} className="flex items-center gap-2 bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-semibold shadow-md hover:shadow-lg transition-all hover:scale-105">
-          <Home className="w-4 h-4" />
-          {t("backToHome", lang)}
-        </button>
+        <div className="flex gap-3 mt-6">
+          <button onClick={onPrev} className="btn-secondary flex-1">
+            <ArrowLeft className="w-4 h-4" />
+            {t("prev", lang)}
+          </button>
+          <button onClick={onNextLesson} className="btn-primary flex-[2]">
+            {t("nextLesson", lang)}
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,54 +1,64 @@
-import { t, Lang } from "@/data/translations";
-import { Upload, Globe, PartyPopper, Home } from "lucide-react";
-import Confetti from "@/components/Confetti";
+import { Lang, t } from "@/data/translations";
+import { ArrowLeft, ArrowRight, Home, Globe, ShieldCheck } from "lucide-react";
 
 interface Props {
   lang: Lang;
   onPrev: () => void;
-  onHome: () => void;
+  onNextLesson: () => void;
 }
 
-const ChatPage7Deploy = ({ lang, onPrev, onHome }: Props) => {
+const ChatPage7Deploy = ({ lang, onPrev, onNextLesson }: Props) => {
   const steps = [
-    { icon: Globe, text: t("step1", lang), num: "1" },
-    { icon: Upload, text: t("step2", lang), num: "2" },
-    { icon: PartyPopper, text: t("step3", lang), num: "3" },
+    { title: t("chatDeployStep1", lang), desc: "Open your project folder in your file explorer." },
+    { title: t("chatDeployStep2", lang), desc: "Drag it into the Netlify drop zone." },
+    { title: t("chatDeployStep3", lang), desc: "Go to 'Site Configuration' > 'Environment Variables'." },
+    { title: "Step 4: Add OPENROUTER_API_KEY", desc: "Paste your API key value into this variable." },
+    { title: "Step 5: Save & Redeploy", desc: "If the site is already live, trigger a new deploy to use the keys." },
+    { title: "Step 6: Success!", desc: "Your AI Chat app is now secure and live!" },
   ];
 
   return (
-    <div className="space-y-6">
-      <Confetti />
-      <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold mb-2">🚀 {t("deployTitle", lang)}</h1>
-        <p className="text-muted-foreground">{t("deployDesc", lang)}</p>
+    <div className="space-y-8">
+      <div className="space-y-2 text-center">
+        <h2 className="text-3xl font-bold text-foreground">{t("chatDeployTitle", lang)}</h2>
+        <p className="text-muted-foreground">{t("chatDeploySubtitle", lang)}</p>
       </div>
 
-      <div className="space-y-4">
-        {steps.map(({ icon: Icon, text, num }) => (
-          <div key={num} className="lesson-card flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <span className="text-primary font-bold">{num}</span>
+      <div className="lesson-card space-y-6">
+        <div className="space-y-3 h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+          {steps.map((step, i) => (
+            <div key={i} className="flex gap-4 bg-secondary p-4 rounded-xl hover:bg-secondary/80 transition-colors">
+              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="text-sm font-bold text-primary">{i + 1}</span>
+              </div>
+              <div>
+                <h4 className="font-semibold text-foreground text-sm">{step.title}</h4>
+                <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{step.desc}</p>
+              </div>
             </div>
-            <div className="flex items-center gap-3">
-              <Icon className="w-5 h-5 text-primary" />
-              <span className="text-foreground/80">{text}</span>
-            </div>
+          ))}
+        </div>
+
+        <div className="flex items-start gap-3 bg-green-500/10 border border-green-500/20 p-4 rounded-xl">
+          <ShieldCheck className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="font-semibold text-green-700/80 text-sm mb-0.5">Security Verified</p>
+            <p className="text-xs text-green-600 dark:text-green-500/80 leading-relaxed">
+              Using Netlify variables keeps your API keys hidden from the public!
+            </p>
           </div>
-        ))}
-      </div>
+        </div>
 
-      <div className="lesson-card text-center py-8 bg-primary/5">
-        <PartyPopper className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h2 className="text-2xl font-bold mb-2">{t("chatCongrats", lang)}</h2>
-        <p className="text-muted-foreground">{t("chatCongratsDesc", lang)}</p>
-      </div>
-
-      <div className="flex justify-between pt-4">
-        <button onClick={onPrev} className="text-muted-foreground hover:text-foreground transition-colors font-medium">{t("prev", lang)}</button>
-        <button onClick={onHome} className="flex items-center gap-2 bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-semibold shadow-md hover:shadow-lg transition-all hover:scale-105">
-          <Home className="w-4 h-4" />
-          {t("backToHome", lang)}
-        </button>
+        <div className="flex gap-3">
+          <button onClick={onPrev} className="btn-secondary flex-1">
+            <ArrowLeft className="w-4 h-4" />
+            {t("prev", lang)}
+          </button>
+          <button onClick={onNextLesson} className="btn-primary flex-[2]">
+            {t("backToHome", lang)}
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
     </div>
   );

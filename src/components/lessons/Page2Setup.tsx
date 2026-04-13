@@ -1,6 +1,6 @@
+import { Lang, t } from "@/data/translations";
+import { ArrowLeft, ArrowRight, ExternalLink, Monitor, Mail, Globe } from "lucide-react";
 import { useState } from "react";
-import { t, Lang } from "@/data/translations";
-import { Check } from "lucide-react";
 
 interface Props {
   lang: Lang;
@@ -9,61 +9,101 @@ interface Props {
 }
 
 const Page2Setup = ({ lang, onNext, onPrev }: Props) => {
-  const [checked, setChecked] = useState([false, false, false]);
+  const [checkedItems, setCheckedItems] = useState<Record<number, boolean>>({});
 
-  const toggle = (i: number) => {
-    const next = [...checked];
-    next[i] = !next[i];
-    setChecked(next);
+  const toggleCheck = (i: number) => {
+    setCheckedItems(prev => ({ ...prev, [i]: !prev[i] }));
   };
 
-  const items = [
-    { title: t("gmail", lang), desc: t("gmailDesc", lang) },
-    { title: t("windsurf", lang), desc: t("windsurfDesc", lang), link: "https://windsurf.com" },
-    { title: t("netlify", lang), desc: t("netlifyDesc", lang), link: "https://netlify.com" },
+  const steps = [
+    { 
+      icon: Mail, 
+      title: t("gmail", lang), 
+      desc: t("gmailDesc", lang),
+      link: "https://accounts.google.com/signup"
+    },
+    { 
+      icon: Monitor, 
+      title: t("antigravity", lang), 
+      desc: t("antigravityDesc", lang),
+      link: "https://antigravity.google/" // Link to install
+    },
+    { 
+      icon: Globe, 
+      title: t("netlify", lang), 
+      desc: t("netlifyDesc", lang),
+      link: "https://app.netlify.com/signup"
+    },
   ];
 
   return (
-    <div className="space-y-6">
-      <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold mb-2">📋 {t("setupTitle", lang)}</h1>
+    <div className="space-y-8">
+      <div className="space-y-2 text-center">
+        <h2 className="text-3xl font-bold text-foreground">{t("setupTitle", lang)}</h2>
         <p className="text-muted-foreground">{t("setupDesc", lang)}</p>
       </div>
 
-      <div className="space-y-4">
-        {items.map((item, i) => (
-          <div
-            key={i}
-            onClick={() => toggle(i)}
-            className={`lesson-card cursor-pointer transition-all duration-300 ${
-              checked[i] ? "ring-2 ring-primary/50 bg-primary/5" : ""
-            }`}
-          >
-            <div className="flex items-start gap-4">
-              <div className={`w-7 h-7 rounded-lg border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
-                checked[i] ? "bg-primary border-primary" : "border-border"
-              }`}>
-                {checked[i] && <Check className="w-4 h-4 text-primary-foreground" />}
+      <div className="lesson-card space-y-6">
+        <div className="space-y-3">
+          {steps.map((step, i) => {
+            const Icon = step.icon;
+            const isChecked = checkedItems[i] || false;
+            
+            return (
+              <div 
+                key={i} 
+                className={`flex gap-4 p-4 rounded-xl border transition-all cursor-pointer ${
+                  isChecked 
+                    ? "bg-primary/10 border-primary/30" 
+                    : "bg-secondary border-transparent hover:border-border"
+                }`}
+                onClick={() => toggleCheck(i)}
+              >
+                <div className="mt-0.5">
+                  <div className={`w-6 h-6 rounded-md border flex items-center justify-center transition-colors ${
+                    isChecked ? "bg-primary border-primary text-primary-foreground" : "border-muted-foreground/30 bg-background"
+                  }`}>
+                    {isChecked && <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>}
+                  </div>
+                </div>
+                
+                <div className="flex-1">
+                  <div className="flex items-center justify-between">
+                    <h4 className={`font-semibold text-sm ${isChecked ? "text-primary" : "text-foreground"}`}>
+                      {step.title}
+                    </h4>
+                    {step.link !== "#" && (
+                      <a 
+                        href={step.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-xs flex items-center gap-1 text-blue-500 hover:text-blue-600 dark:text-blue-400 font-medium"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {lang === "en" ? "Open Link" : "링크 열기"}
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">{step.desc}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold text-foreground">{item.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
-                {item.link && (
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-sm text-primary underline mt-1 inline-block" onClick={(e) => e.stopPropagation()}>
-                    {item.link}
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+            );
+          })}
+        </div>
 
-      <div className="flex justify-between pt-4">
-        <button onClick={onPrev} className="text-muted-foreground hover:text-foreground transition-colors font-medium">{t("prev", lang)}</button>
-        <button onClick={onNext} className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-semibold shadow-md hover:shadow-lg transition-all hover:scale-105">
-          {t("next", lang)}
-        </button>
+        <div className="flex gap-3 pt-2">
+          <button onClick={onPrev} className="btn-secondary flex-1">
+            <ArrowLeft className="w-4 h-4" />
+            {t("prev", lang)}
+          </button>
+          <button onClick={onNext} className="btn-primary flex-[2]">
+            {t("next", lang)}
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
     </div>
   );

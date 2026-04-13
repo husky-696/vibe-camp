@@ -1,4 +1,8 @@
-import { t, Lang } from "@/data/translations";
+import { Lang, t } from "@/data/translations";
+import { ArrowLeft, ArrowRight, Copy, Terminal } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
+
 import CodeBlock from "@/components/CodeBlock";
 
 interface Props {
@@ -7,37 +11,32 @@ interface Props {
   onPrev: () => void;
 }
 
-const TttPage2Prompt = ({ lang, onNext, onPrev }: Props) => (
-  <div className="space-y-6">
-    <div className="text-center mb-6">
-      <h1 className="text-3xl font-bold mb-2">🤖 {t("tttPromptTitle", lang)}</h1>
-      <p className="text-muted-foreground">{t("tttPromptDesc", lang)}</p>
-    </div>
+const TttPage2Prompt = ({ lang, onNext, onPrev }: Props) => {
+  return (
+    <div className="space-y-8">
+      <div className="space-y-2 text-center">
+        <h2 className="text-3xl font-bold text-foreground">{t("tttPromptTitle", lang)}</h2>
+        <p className="text-muted-foreground">{t("tttPromptDesc", lang)}</p>
+      </div>
 
-    <div className="lesson-card">
-      <h2 className="text-lg font-semibold mb-3 text-primary">{t("promptLabel", lang)}</h2>
-      <CodeBlock code={t("tttPromptText", lang)} language="prompt" />
-    </div>
+      <div className="lesson-card space-y-6">
+        <div>
+          <CodeBlock code={t("tttPromptText", lang)} language="prompt" lang={lang} />
+        </div>
 
-    <div className="lesson-card">
-      <h2 className="text-lg font-semibold mb-3 text-primary">
-        {lang === "en" ? "Steps" : "단계"}
-      </h2>
-      <ol className="space-y-3 text-foreground/80">
-        <li className="text-base">1️⃣ {t("vibeStep1", lang)}</li>
-        <li className="text-base">2️⃣ {t("vibeStep2", lang)}</li>
-        <li className="text-base">3️⃣ {t("vibeStep3", lang)}</li>
-        <li className="text-base">4️⃣ {t("vibeStep4", lang)}</li>
-      </ol>
+        <div className="flex gap-3">
+          <button onClick={onPrev} className="btn-secondary flex-1">
+            <ArrowLeft className="w-4 h-4" />
+            {t("prev", lang)}
+          </button>
+          <button onClick={onNext} className="btn-primary flex-[2]">
+            {t("next", lang)}
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
     </div>
-
-    <div className="flex justify-between pt-4">
-      <button onClick={onPrev} className="text-muted-foreground hover:text-foreground transition-colors font-medium">{t("prev", lang)}</button>
-      <button onClick={onNext} className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-semibold shadow-md hover:shadow-lg transition-all hover:scale-105">
-        {t("next", lang)}
-      </button>
-    </div>
-  </div>
-);
+  );
+};
 
 export default TttPage2Prompt;

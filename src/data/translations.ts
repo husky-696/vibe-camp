@@ -18,7 +18,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "goal1": { en: "Learn basic coding", ko: "기본 코딩 배우기" },
   "goal2": { en: "Use AI to build faster", ko: "AI를 활용해 더 빠르게 만들기" },
   "goal3": { en: "Publish a real website", ko: "실제 웹사이트 배포하기" },
-  "startLesson": { en: "Start Lesson →", ko: "수업 시작 →" },
+  "startLesson": { en: "Start Lesson", ko: "수업 시작" },
 
   // Lesson Selection
   "chooseLesson": { en: "Choose Your Lesson", ko: "수업을 선택하세요" },
@@ -32,14 +32,16 @@ const translations: Record<string, Record<Lang, string>> = {
   "lesson3Title": { en: "Chat AI Web App", ko: "채팅 AI 웹 앱" },
   "lesson3Desc": { en: "Build a chat interface and learn JavaScript interaction", ko: "채팅 인터페이스를 만들고 JavaScript 인터랙션을 배우세요" },
   "backToHome": { en: "Back to Lessons", ko: "수업 목록으로" },
+  "nextLesson": { en: "Choose Lesson", ko: "수업 선택하기" },
+  "finishBasics": { en: "Finish Basics", ko: "기초 완료하기" },
 
   // Page 2
   "setupTitle": { en: "Setup Checklist", ko: "준비 체크리스트" },
   "setupDesc": { en: "Make sure you have everything ready before we begin!", ko: "시작하기 전에 모든 것이 준비되었는지 확인하세요!" },
   "gmail": { en: "Have a Gmail account", ko: "Gmail 계정 보유" },
   "gmailDesc": { en: "We'll use Google to sign into services", ko: "서비스 로그인에 Google을 사용합니다" },
-  "windsurf": { en: "Install Windsurf", ko: "Windsurf 설치" },
-  "windsurfDesc": { en: "Our AI-powered code editor", ko: "AI 기반 코드 에디터" },
+  "antigravity": { en: "Install Antigravity IDE", ko: "Antigravity IDE 설치" },
+  "antigravityDesc": { en: "Our AI-powered code editor", ko: "AI 기반 코드 에디터" },
   "netlify": { en: "Create a Netlify account", ko: "Netlify 계정 생성" },
   "netlifyDesc": { en: "Free hosting for your website", ko: "웹사이트 무료 호스팅" },
 
@@ -65,14 +67,14 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // Page 5 - Vibe Coding
   "vibeIntroTitle": { en: "Let's Vibe Code!", ko: "바이브 코딩을 시작하자!" },
-  "vibeIntroDesc": { en: "We'll use AI to generate our code. Copy the prompt below, paste it into your AI IDE, and let AI build it for you!", ko: "AI를 사용하여 코드를 생성하겠습니다. 아래 프롬프트를 복사하여 AI IDE에 붙여넣고, AI가 만들어 주게 하세요!" },
+  "vibeIntroDesc": { en: "We'll use AI to generate our code. Copy the prompt below, paste it into your Antigravity IDE, and let AI build it for you!", ko: "AI를 사용하여 코드를 생성하겠습니다. 아래 프롬프트를 복사하여 Antigravity IDE에 붙여넣고, AI가 만들어 주게 하세요!" },
   "promptLabel": { en: "Copy this prompt:", ko: "이 프롬프트를 복사하세요:" },
   "promptText": {
     en: "Create a modern personal profile website using HTML and CSS. Include a profile photo placeholder, name, short bio, list of hobbies, and social media links. Use a clean, minimal design with soft colors.",
     ko: "HTML과 CSS를 사용하여 현대적인 개인 프로필 웹사이트를 만들어주세요. 프로필 사진 자리, 이름, 짧은 자기소개, 취미 목록, SNS 링크를 포함해주세요. 부드러운 색상의 깔끔하고 미니멀한 디자인을 사용해주세요."
   },
   "vibeStep1": { en: "Copy the prompt above", ko: "위의 프롬프트를 복사하세요" },
-  "vibeStep2": { en: "Paste it into your AI IDE (Windsurf)", ko: "AI IDE (Windsurf)에 붙여넣으세요" },
+  "vibeStep2": { en: "Paste it into your Antigravity IDE", ko: "Antigravity IDE에 붙여넣으세요" },
   "vibeStep3": { en: "AI will generate the code for you", ko: "AI가 코드를 생성해 줍니다" },
   "vibeStep4": { en: "Run the code and see your website!", ko: "코드를 실행하고 웹사이트를 확인하세요!" },
 
@@ -147,8 +149,15 @@ const translations: Record<string, Record<Lang, string>> = {
     ko: "키를 복사하세요 — 프롬프트에 붙여넣을 거예요!"
   },
 
+  "chatDeployStep1": { en: "Open Project Folder", ko: "프로젝트 폴더 열기" },
+  "chatDeployStep2": { en: "Drag to Netlify", ko: "Netlify로 드래그" },
+  "chatDeployStep3": { en: "Go to Env Variables", ko: "환경 변수로 이동" },
+  "chatDeployTitle": { en: "Deploy Your Chat App", ko: "채팅 앱 배포하기" },
+  "chatDeploySubtitle": { en: "Launch your secure AI chat app to the world!", ko: "보안이 강화된 AI 채팅 앱을 세상에 공개하세요!" },
+  
   "chatPromptTitle": { en: "AI Prompt for Chat App", ko: "채팅 앱 AI 프롬프트" },
-  "chatPromptDesc": { en: "Copy this prompt and paste it into your AI IDE. Replace YOUR_API_KEY with the key you just got!", ko: "이 프롬프트를 복사하여 AI IDE에 붙여넣으세요. YOUR_API_KEY를 방금 받은 키로 교체하세요!" },
+
+  "chatPromptDesc": { en: "Copy this prompt and paste it into your Antigravity IDE. Replace YOUR_API_KEY with the key you just got!", ko: "이 프롬프트를 복사하여 Antigravity IDE에 붙여넣으세요. YOUR_API_KEY를 방금 받은 키로 교체하세요!" },
   "chatPromptText": {
     en: `Create a simple AI chat app using HTML, CSS, and JavaScript. 
 
@@ -227,7 +236,7 @@ API 설정:
   "tttGoal5": { en: "Pause and play functionality", ko: "일시정지 및 재개 기능" },
 
   "tttPromptTitle": { en: "AI Prompt for Tic Tac Toe", ko: "틱택토 AI 프롬프트" },
-  "tttPromptDesc": { en: "Copy this prompt and paste it into your AI IDE!", ko: "이 프롬프트를 복사하여 AI IDE에 붙여넣으세요!" },
+  "tttPromptDesc": { en: "Copy this prompt and paste it into your Antigravity IDE!", ko: "이 프롬프트를 복사하여 Antigravity IDE에 붙여넣으세요!" },
   "tttPromptText": {
     en: "Create a Tic Tac Toe game using HTML, CSS, and JavaScript. Include: a 3x3 grid board, 1v1 turn-based gameplay (Player X vs Player O), score tracking for both players, a pause/play button, win detection with a highlight animation on the winning row, lose and draw indicators, a reset/new game button, and simple animations for placing marks and game results. Use a clean modern design with smooth transitions.",
     ko: "HTML, CSS, JavaScript를 사용하여 틱택토 게임을 만들어주세요. 포함할 기능: 3x3 격자 보드, 1대1 턴제 게임플레이(Player X vs Player O), 양쪽 플레이어 점수 추적, 일시정지/재개 버튼, 승리 시 줄 하이라이트 애니메이션, 패배 및 무승부 표시, 리셋/새 게임 버튼, 마크 배치와 게임 결과에 대한 간단한 애니메이션. 깔끔하고 현대적인 디자인과 부드러운 전환을 사용해주세요."
@@ -269,8 +278,49 @@ API 설정:
   },
 
   // Common
-  "next": { en: "Next →", ko: "다음 →" },
-  "prev": { en: "← Back", ko: "← 이전" },
+  "next": { en: "Next", ko: "다음" },
+  "prev": { en: "Back", ko: "이전" },
+  
+  // Blog Lesson
+  "blogTitle": { en: "Personalized Blog", ko: "개인 블로그 프로젝트" },
+  "blogSubtitle": { en: "Build a blog with a database using AI", ko: "AI를 사용하여 데이터베이스가 있는 블로그 만들기" },
+  "blogWhatIs": { en: "What is a Blog Project?", ko: "블로그 프로젝트란 무엇인가요?" },
+  "blogWhatIsDesc": {
+    en: "A blog lets you write and save posts. We'll use a simple database to store your stories so they don't disappear!",
+    ko: "블로그는 게시물을 작성하고 저장할 수 있게 해줍니다. 이야기가 사라지지 않도록 간단한 데이터베이스를 사용하여 저장할 거예요!"
+  },
+  "blogGoal1": { en: "Create a blog post list", ko: "블로그 게시물 목록 만들기" },
+  "blogGoal2": { en: "Add a 'New Post' form", ko: "새 게시물 작성 양식 추가" },
+  "blogGoal3": { en: "Style with custom CSS", ko: "커스텀 CSS로 스타일링" },
+  "blogGoalJs": { en: "Connect to a JSON database", ko: "JSON 데이터베이스에 연결" },
+  "blogDbSetupTitle": { en: "Setup Your Database", ko: "데이터베이스 설정하기" },
+  "blogDbSetupDesc": { en: "We'll use JSONBin to store your blog posts for free!", ko: "블로그 게시물을 무료로 저장하기 위해 JSONBin을 사용할 거예요!" },
+  "blogDbStep1": { en: "Go to jsonbin.io and sign up", ko: "jsonbin.io에 접속하여 가입하세요" },
+  "blogDbStep2": { en: "Create a new 'Bin'", ko: "새로운 'Bin'을 만드세요" },
+  "blogDbStep3": { en: "Copy your Bin ID", ko: "Bin ID를 복사하세요" },
+  "blogDbStep4": { en: "Get your API Key from settings", ko: "설정에서 API 키를 받으세요" },
+  "blogPromptTitle": { en: "AI Prompt for Blog", ko: "블로그 AI 프롬프트" },
+  "blogPromptDesc": { en: "Copy this prompt to build your blog structure!", ko: "블로그 구조를 만들기 위해 이 프롬프트를 복사하세요!" },
+  "blogPromptText": {
+    en: "Create a blog website with a list of posts and a form to add new ones. Use HTML, CSS, and JavaScript. The posts should have a title and content.",
+    ko: "게시물 목록과 새 게시물을 추가하는 양식이 있는 블로그 웹사이트를 만들어주세요. HTML, CSS, JavaScript를 사용하세요. 게시물에는 제목과 내용이 있어야 합니다."
+  },
+  "blogNetlifyTitle": { en: "Connect Database to Netlify", ko: "데이터베이스를 Netlify에 연결하기" },
+  "blogNetlifyDesc": { en: "Keep your database keys safe using environment variables.", ko: "환경 변수를 사용하여 데이터베이스 키를 안전하게 보관하세요." },
+  "blogNetlifyStep1": { en: "Go to Netlify Site Settings", ko: "Netlify 사이트 설정으로 이동하세요" },
+  "blogNetlifyStep2": { en: "Find 'Environment Variables'", ko: "'Environment Variables'를 찾으세요" },
+  "blogNetlifyStep3": { en: "Add YOUR_BIN_ID and YOUR_API_KEY", ko: "YOUR_BIN_ID와 YOUR_API_KEY를 추가하세요" },
+  "blogCongrats": { en: "🎉 Your Blog is Live!", ko: "🎉 블로그가 배포되었습니다!" },
+  "blogCongratsDesc": { en: "You've built a full-stack application! Start writing your stories.", ko: "풀스택 애플리케이션을 만들었습니다! 이야기를 쓰기 시작해보세요." },
+
+  // Chat Lesson mapping
+  "lesson3Title": { en: "Personalized Blog", ko: "개인 블로그 프로젝트" },
+  "lesson3Desc": { en: "Build a blog and learn about databases", ko: "블로그를 만들고 데이터베이스에 대해 배우세요" },
+  "lesson4Title": { en: "Chat AI Web App", ko: "채팅 AI 웹 앱" },
+  "lesson4Desc": { en: "Build a real AI chat app using an API", ko: "API를 사용하여 진짜 AI 채팅 앱 만들기" },
+  "chatNetlifyTitle": { en: "Secure Your API Key", ko: "API 키 보안 설정" },
+  "chatNetlifyDesc": { en: "Use Netlify environment variables to hide your key.", ko: "키를 숨기기 위해 Netlify 환경 변수를 사용하세요." },
+
   "step": { en: "Step", ko: "단계" },
   "of": { en: "of", ko: "/" },
 };

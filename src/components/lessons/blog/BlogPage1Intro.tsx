@@ -1,42 +1,41 @@
-import { Lang, t } from "@/data/translations";
-import { ArrowRight, Gamepad2 } from "lucide-react";
+import { t, Lang } from "@/data/translations";
+import { ArrowRight, Database, PenTool } from "lucide-react";
 
 interface Props {
   lang: Lang;
   onNext: () => void;
 }
 
-const TttPage1Intro = ({ lang, onNext }: Props) => {
+const BlogPage1Intro = ({ lang, onNext }: Props) => {
   const goals = [
-    t("tttGoal1", lang),
-    t("tttGoal2", lang),
-    t("tttGoal3", lang),
-    t("tttGoal4", lang),
-    t("tttGoal5", lang),
+    t("blogGoal1", lang),
+    t("blogGoal2", lang),
+    t("blogGoal3", lang),
+    t("blogGoalJs", lang),
   ];
 
   return (
     <div className="space-y-8">
       <div className="space-y-2 text-center">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground flex items-center justify-center gap-4">
-          <Gamepad2 className="w-10 h-10 md:w-12 md:h-12 text-[#a855f7] animate-bounce" />
-          {t("tttTitle", lang)}
+          <PenTool className="w-10 h-10 md:w-12 md:h-12 text-[#4da6ff] animate-bounce" />
+          {t("blogTitle", lang)}
         </h1>
-        <p className="text-muted-foreground">{t("tttSubtitle", lang)}</p>
+        <p className="text-muted-foreground">{t("blogSubtitle", lang)}</p>
       </div>
 
       <div className="lesson-card space-y-6">
         <div>
-          <h3 className="text-base font-semibold text-foreground mb-1">{t("tttWhatIs", lang)}</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed">{t("tttWhatIsDesc", lang)}</p>
+          <h3 className="text-base font-semibold text-foreground mb-1">{t("blogWhatIs", lang)}</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">{t("blogWhatIsDesc", lang)}</p>
         </div>
 
         <div>
-          <h3 className="text-base font-semibold text-foreground mb-3">{t("tttWhatBuild", lang)}</h3>
+          <h3 className="text-base font-semibold text-foreground mb-3">What you'll build:</h3>
           <div className="space-y-2">
             {goals.map((goal, i) => (
               <div key={i} className="flex items-center gap-3 bg-secondary p-3 rounded-xl">
-                <Gamepad2 className="w-4 h-4 text-primary flex-shrink-0" />
+                <Database className="w-4 h-4 text-primary flex-shrink-0" />
                 <span className="text-sm text-foreground">{goal}</span>
               </div>
             ))}
@@ -52,4 +51,4 @@ const TttPage1Intro = ({ lang, onNext }: Props) => {
   );
 };
 
-export default TttPage1Intro;
+export default BlogPage1Intro;

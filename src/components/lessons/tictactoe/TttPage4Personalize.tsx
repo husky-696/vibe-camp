@@ -1,6 +1,6 @@
-import { t, Lang } from "@/data/translations";
-import { Palette, User, Gamepad2, Volume2 } from "lucide-react";
-import HintButton from "@/components/HintButton";
+import { Lang, t } from "@/data/translations";
+import { ArrowLeft, ArrowRight, Info } from "lucide-react";
+import CodeBlock from "@/components/CodeBlock";
 
 interface Props {
   lang: Lang;
@@ -10,46 +10,48 @@ interface Props {
 
 const TttPage4Personalize = ({ lang, onNext, onPrev }: Props) => {
   const items = [
-    { icon: Gamepad2, text: t("tttPersonalize1", lang) },
-    { icon: User, text: t("tttPersonalize2", lang) },
-    { icon: Palette, text: t("tttPersonalize3", lang) },
-    { icon: Volume2, text: t("tttPersonalize4", lang) },
+    t("tttPersonalize1", lang),
+    t("tttPersonalize2", lang),
+    t("tttPersonalize3", lang),
+    t("tttPersonalize4", lang),
   ];
 
   return (
-    <div className="space-y-6">
-      <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold mb-2">✏️ {t("tttPersonalizeTitle", lang)}</h1>
+    <div className="space-y-8">
+      <div className="space-y-2 text-center">
+        <h2 className="text-3xl font-bold text-foreground">{t("tttPersonalizeTitle", lang)}</h2>
         <p className="text-muted-foreground">{t("tttPersonalizeDesc", lang)}</p>
       </div>
 
-      <div className="space-y-4">
-        {items.map(({ icon: Icon, text }, i) => (
-          <div key={i} className="lesson-card flex items-center gap-4">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <Icon className="w-5 h-5 text-primary" />
+      <div className="lesson-card space-y-6">
+        <div className="space-y-2">
+          {items.map((item, i) => (
+            <div key={i} className="flex items-start gap-3 bg-secondary p-3 rounded-xl">
+              <span className="text-xs font-bold text-primary bg-primary/10 rounded-lg px-2 py-1 flex-shrink-0 mt-0.5">{i + 1}</span>
+              <p className="text-sm text-foreground">{item}</p>
             </div>
-            <span className="text-foreground/80">{text}</span>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <HintButton
-        lang={lang}
-        label={t("hintBtnLabel", lang)}
-        prompt={t("tttHintPrompt", lang)}
-      />
+        <div>
+          <CodeBlock code={t("tttHintPrompt", lang)} language="prompt" lang={lang} />
+        </div>
 
-      <div className="tip-box">
-        <h3 className="font-semibold mb-2">{t("tttUpgradeTip", lang)}</h3>
-        <p className="text-sm">{t("tttUpgradeTipDesc", lang)}</p>
-      </div>
+        <div className="tip-box flex gap-2 items-start">
+          <Info className="w-4 h-4 flex-shrink-0 mt-0.5" />
+          <span><strong>{t("tttUpgradeTip", lang)}</strong> — {t("tttUpgradeTipDesc", lang)}</span>
+        </div>
 
-      <div className="flex justify-between pt-4">
-        <button onClick={onPrev} className="text-muted-foreground hover:text-foreground transition-colors font-medium">{t("prev", lang)}</button>
-        <button onClick={onNext} className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-semibold shadow-md hover:shadow-lg transition-all hover:scale-105">
-          {t("next", lang)}
-        </button>
+        <div className="flex gap-3">
+          <button onClick={onPrev} className="btn-secondary flex-1">
+            <ArrowLeft className="w-4 h-4" />
+            {t("prev", lang)}
+          </button>
+          <button onClick={onNext} className="btn-primary flex-[2]">
+            {t("next", lang)}
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
     </div>
   );

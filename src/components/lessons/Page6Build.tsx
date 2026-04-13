@@ -1,6 +1,5 @@
-import { t, Lang } from "@/data/translations";
-import { User, FileText, Heart, Link, Pencil } from "lucide-react";
-import HintButton from "@/components/HintButton";
+import { Lang, t } from "@/data/translations";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 interface Props {
   lang: Lang;
@@ -9,62 +8,49 @@ interface Props {
 }
 
 const Page6Build = ({ lang, onNext, onPrev }: Props) => {
-  const sections = [
-    { icon: User, label: t("name", lang) },
-    { icon: FileText, label: t("bio", lang) },
-    { icon: Heart, label: t("hobbies", lang) },
-    { icon: Link, label: t("socialLinks", lang) },
+  const items = [
+    { label: t("name", lang), hint: t("personalizeStep1", lang) },
+    { label: t("bio", lang), hint: t("personalizeStep2", lang) },
+    { label: t("hobbies", lang), hint: t("personalizeStep3", lang) },
+    { label: t("socialLinks", lang), hint: t("personalizeStep4", lang) },
   ];
 
   return (
-    <div className="space-y-6">
-      <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold mb-2">✏️ {t("buildTitle", lang)}</h1>
+    <div className="space-y-8">
+      <div className="space-y-2 text-center">
+        <h2 className="text-3xl font-bold text-foreground">{t("buildTitle", lang)}</h2>
         <p className="text-muted-foreground">{t("buildDesc", lang)}</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
-        {sections.map(({ icon: Icon, label }) => (
-          <div key={label} className="lesson-card flex flex-col items-center gap-3 py-6">
-            <Icon className="w-10 h-10 text-primary" />
-            <span className="font-semibold">{label}</span>
-          </div>
-        ))}
-      </div>
+      <div className="lesson-card space-y-6">
+        <div className="space-y-3">
+          {items.map((item, i) => (
+            <div key={i} className="bg-secondary p-4 rounded-xl">
+              <p className="font-semibold text-foreground text-sm mb-1">{item.label}</p>
+              <p className="text-sm text-muted-foreground">{item.hint}</p>
+            </div>
+          ))}
+        </div>
 
-      <div className="lesson-card">
-        <h3 className="font-semibold mb-3 text-primary flex items-center gap-2">
-          <Pencil className="w-4 h-4" />
-          {t("personalizeHow", lang)}
-        </h3>
-        <ul className="space-y-2 text-foreground/80 text-sm">
-          <li>1️⃣ {t("personalizeStep1", lang)}</li>
-          <li>2️⃣ {t("personalizeStep2", lang)}</li>
-          <li>3️⃣ {t("personalizeStep3", lang)}</li>
-          <li>4️⃣ {t("personalizeStep4", lang)}</li>
-        </ul>
-      </div>
+        <div className="tip-box">
+          <strong>{t("tipsTitle", lang)}</strong>
+          <ul className="mt-2 space-y-1 list-disc list-inside">
+            <li>{t("tip1", lang)}</li>
+            <li>{t("tip2", lang)}</li>
+            <li>{t("tip3", lang)}</li>
+          </ul>
+        </div>
 
-      <HintButton
-        lang={lang}
-        label={t("hintBtnLabel", lang)}
-        prompt={t("profileHintPrompt", lang)}
-      />
-
-      <div className="tip-box">
-        <h3 className="font-semibold mb-3">{t("tipsTitle", lang)}</h3>
-        <ul className="space-y-2 text-sm">
-          <li>🎨 {t("tip1", lang)}</li>
-          <li>📸 {t("tip2", lang)}</li>
-          <li>✨ {t("tip3", lang)}</li>
-        </ul>
-      </div>
-
-      <div className="flex justify-between pt-4">
-        <button onClick={onPrev} className="text-muted-foreground hover:text-foreground transition-colors font-medium">{t("prev", lang)}</button>
-        <button onClick={onNext} className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-semibold shadow-md hover:shadow-lg transition-all hover:scale-105">
-          {t("next", lang)}
-        </button>
+        <div className="flex gap-3">
+          <button onClick={onPrev} className="btn-secondary flex-1">
+            <ArrowLeft className="w-4 h-4" />
+            {t("prev", lang)}
+          </button>
+          <button onClick={onNext} className="btn-primary flex-[2]">
+            {t("next", lang)}
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
     </div>
   );
