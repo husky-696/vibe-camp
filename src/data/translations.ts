@@ -32,7 +32,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "lesson3Title": { en: "Chat AI Web App", ko: "채팅 AI 웹 앱" },
   "lesson3Desc": { en: "Build a chat interface and learn JavaScript interaction", ko: "채팅 인터페이스를 만들고 JavaScript 인터랙션을 배우세요" },
   "backToHome": { en: "Back to Lessons", ko: "수업 목록으로" },
-  "nextLesson": { en: "Choose Lesson", ko: "수업 선택하기" },
+  "nextLesson": { en: "Next Lesson", ko: "수업 선택하기" },
   "finishBasics": { en: "Finish Basics", ko: "기초 완료하기" },
 
   // Page 2
@@ -154,7 +154,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "chatDeployStep3": { en: "Go to Env Variables", ko: "환경 변수로 이동" },
   "chatDeployTitle": { en: "Deploy Your Chat App", ko: "채팅 앱 배포하기" },
   "chatDeploySubtitle": { en: "Launch your secure AI chat app to the world!", ko: "보안이 강화된 AI 채팅 앱을 세상에 공개하세요!" },
-  
+
   "chatPromptTitle": { en: "AI Prompt for Chat App", ko: "채팅 앱 AI 프롬프트" },
 
   "chatPromptDesc": { en: "Copy this prompt and paste it into your Antigravity IDE. Replace YOUR_API_KEY with the key you just got!", ko: "이 프롬프트를 복사하여 Antigravity IDE에 붙여넣으세요. YOUR_API_KEY를 방금 받은 키로 교체하세요!" },
@@ -280,7 +280,7 @@ API 설정:
   // Common
   "next": { en: "Next", ko: "다음" },
   "prev": { en: "Back", ko: "이전" },
-  
+
   // Blog Lesson
   "blogTitle": { en: "Personalized Blog", ko: "개인 블로그 프로젝트" },
   "blogSubtitle": { en: "Build a blog with a database using AI", ko: "AI를 사용하여 데이터베이스가 있는 블로그 만들기" },
